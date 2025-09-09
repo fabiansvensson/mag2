@@ -89,7 +89,7 @@
         "title_emphasis": "Legacy",
         "title_suffix": "of Art",
         "heading_size": "h0",
-        "emphasis_color": "#B14F34",
+        "emphasis_color": "#b14f34",
         "body": "<p>En Mariangélica Guerra, llevamos más de 20 años dedicados a vestir a mujeres con piezas únicas que trascienden el tiempo. Nuestra pasión por la excelencia en el patronaje anatómico, la confección y la atención a cada detalle manual nos define.</p>",
         "cta_label": "EXPLORE NOW",
         "cta_link": "",
@@ -99,299 +99,97 @@
         "padding_bottom": 48
       }
     },
-    "collection_list_c6RBX3": {
-      "type": "collection-list",
+    "bestsellers_mag_gCaiX3": {
+      "type": "bestsellers-mag",
       "blocks": {
-        "featured_collection_LNPyGg": {
-          "type": "featured_collection",
+        "bestseller_product_hGXxLX": {
+          "type": "bestseller_product",
           "settings": {
-            "collection": "denim"
+            "product": "ave-guajira-blouse"
           }
         },
-        "featured_collection_YVXbNM": {
-          "type": "featured_collection",
+        "bestseller_product_4wFKDb": {
+          "type": "bestseller_product",
           "settings": {
-            "collection": "blouses-tops"
+            "product": "elena-denim-pant"
           }
         },
-        "featured_collection_MdfQQ8": {
-          "type": "featured_collection",
+        "bestseller_product_Fgfkwf": {
+          "type": "bestseller_product",
           "settings": {
-            "collection": "jumpsuits-dresses"
+            "product": "aquarela-blouse"
           }
         }
       },
       "block_order": [
-        "featured_collection_LNPyGg",
-        "featured_collection_YVXbNM",
-        "featured_collection_MdfQQ8"
+        "bestseller_product_hGXxLX",
+        "bestseller_product_4wFKDb",
+        "bestseller_product_Fgfkwf"
       ],
-      "name": "t:sections.collection-list.presets.name",
+      "name": "Bestsellers – MAG",
       "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 5,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "Best",
+        "title_cursive": "sellers",
+        "show_view_all": true,
+        "view_all_text": "VIEW ALL",
+        "view_all_link": "shopify://collections/all"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "about_split_mag_kBe3pc": {
+      "type": "about-split-mag",
+      "name": "About split – MAG",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 3,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "image": "shopify://shop_images/IMG_0708_1.jpg",
+        "image_alt": "Markus Grey",
+        "image_position": "left",
+        "kicker": "A <em>Legacy</em> of",
+        "title": "Colombian Craft",
+        "subtitle": "Timeless fashion, naturally born",
+        "body": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "newsletter_mag_aLWerK": {
+      "type": "newsletter-mag",
+      "name": "Newsletter - MAG",
+      "settings": {
+        "bg_image": "shopify://shop_images/bkg.jpg",
+        "heading": "Join our world",
+        "description": "Subscribe to our newsletter and be updated on unique collections and new launches.",
+        "button_label": "Sign up"
+      }
+    },
+    "newsletter_xyhE4a": {
+      "type": "newsletter",
       "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "rich_text_dhpjyP": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_DCVgi6": {
+        "heading_DetQr7": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Subscribe to our emails",
             "heading_size": "h1"
           }
         },
-        "text_VgEhTA": {
-          "type": "text",
+        "paragraph_dzNCQg": {
+          "type": "paragraph",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
           }
         },
-        "button_GTFJEw": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
+        "email_form_nifApR": {
+          "type": "email_form",
+          "settings": {}
         }
       },
       "block_order": [
-        "heading_DCVgi6",
-        "text_VgEhTA",
-        "button_GTFJEw"
+        "heading_DetQr7",
+        "paragraph_dzNCQg",
+        "email_form_nifApR"
       ],
-      "name": "t:sections.rich-text.presets.name",
+      "name": "t:sections.newsletter.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
-      }
-    },
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-3",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
@@ -399,13 +197,9 @@
     "hero_text_image_ATXRRC",
     "collection_list_mag_V8tj8T",
     "magazine_section_6MHi37",
-    "collection_list_c6RBX3",
-    "featured_collection",
-    "multicolumn",
-    "rich_text_dhpjyP",
-    "image_banner",
-    "rich_text",
-    "collage",
-    "video"
+    "bestsellers_mag_gCaiX3",
+    "about_split_mag_kBe3pc",
+    "newsletter_mag_aLWerK",
+    "newsletter_xyhE4a"
   ]
 }

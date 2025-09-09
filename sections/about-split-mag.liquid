@@ -1,0 +1,134 @@
+{% comment %}
+  Section: About Split – MAG
+  A two-column block with an image and editable text (kicker, title, subtitle, rich text).
+  Tailwind utilities assumed available (compiled into /assets/tailwind.css).
+{% endcomment %}
+
+<section class="section-about-split py-14 md:py-18">
+    <div class="page-width">
+        <div
+                class="grid items-start gap-y-10 gap-x-12 md:grid-cols-2"
+                style="--gap-x: 3rem"
+        >
+            {%- capture image_col -%}
+                <div class="order-1 md:order-none">
+                    {%- if section.settings.image != blank -%}
+                        <div class="overflow-hidden">
+                            <img
+                                    srcset="
+                  {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                  {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                  {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {{ section.settings.image | image_url }} {{ section.settings.image.width }}w
+                "
+                                    sizes="(min-width: 990px) 48vw, 100vw"
+                                    src="{{ section.settings.image | image_url: width: 1500 }}"
+                                    alt="{{ section.settings.image_alt | default: section.settings.kicker | escape }}"
+                                    loading="lazy"
+                                    class="w-full h-auto object-cover"
+                            >
+                        </div>
+                    {%- else -%}
+                        <div class="bg-[rgb(var(--color-background-contrast))]/10 aspect-[3/2] w-full"></div>
+                    {%- endif -%}
+                </div>
+            {%- endcapture -%}
+
+            {%- capture text_col -%}
+                <div class="max-w-[72ch] md:pl-2">
+                    {%- if section.settings.kicker != blank -%}
+                        <p class="text-[1.8rem] leading-snug mb-4">
+                            {{ section.settings.kicker }}
+                        </p>
+                    {%- endif -%}
+
+                    {% comment %}{{ section.settings.title }}{% endcomment %}
+
+                    {%- if section.settings.title != blank -%}
+                        <h2 class="text-[4.8rem] max-w-[40rem] leading-[1.4] mb-6">
+                            A <span class="text-[#741C0D] italic">Legacy</span> of Colombian Craft
+                        </h2>
+                    {%- endif -%}
+
+                    {%- if section.settings.subtitle != blank -%}
+                        <h3 class="italic text-[2.2rem] leading-snug mb-8">
+                            {{ section.settings.subtitle }}
+                        </h3>
+                    {%- endif -%}
+
+                    {%- if section.settings.body != blank -%}
+                        <div class="flex flex-col space-y-6 prose-p:text-[1.8rem] max-w-none">
+                            {{ section.settings.body }}
+                        </div>
+                    {%- endif -%}
+                </div>
+            {%- endcapture -%}
+
+            {%- if section.settings.image_position == 'left' -%}
+                {{ image_col }}
+                {{ text_col }}
+            {%- else -%}
+                {{ text_col }}
+                {{ image_col }}
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "About split – MAG",
+  "tag": "section",
+  "class": "section section-about-split",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position (desktop)",
+      "default": "left",
+      "options": [
+        { "value": "left",  "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "inline_richtext",
+      "id": "kicker",
+      "label": "Kicker (small line above title)",
+      "default": "A <em>Legacy</em> of"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Colombian Craft"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Timeless fashion, naturally born"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
+    }
+  ],
+  "presets": [
+    { "name": "About split – MAG" }
+  ]
+}
+{% endschema %}

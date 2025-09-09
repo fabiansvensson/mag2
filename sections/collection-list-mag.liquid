@@ -51,7 +51,7 @@
                 {% unless show_mobile_slider or show_desktop_slider %}hidden{% endunless %}>
             <ul id="Slider-{{ section.id }}"
                 class="collection-list contains-card contains-card--collection
-                 grid grid--{{ section.settings.columns_desktop }}-col-desktop
+                 dawn-grid grid--{{ section.settings.columns_desktop }}-col-desktop
                  grid--{{ section.settings.columns_mobile }}-col-tablet-down
                  {% if show_desktop_slider %} slider slider--desktop{% endif %}
                  {% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
@@ -101,7 +101,7 @@
 
         {%- comment -%} Non-slider fallback (when not needed/enabled) {%- endcomment -%}
         {% unless show_mobile_slider or show_desktop_slider %}
-            <ul class="grid product-grid contains-card contains-card--collection
+            <ul class="dawn-grid product-grid contains-card contains-card--collection
                  grid--{{ section.settings.columns_desktop }}-col-desktop
                  grid--{{ section.settings.columns_mobile }}-col-tablet-down"
                 role="list">

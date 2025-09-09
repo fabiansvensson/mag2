@@ -1,78 +1,78 @@
 {% comment %}
-  Section: Bestsellers – MAG
-  Fast Tailwind 3.x version (no Dawn card snippet)
+  Section: Bestsellers – Manual (MAG)
+  Merchant selects products via blocks (no collection).
+  Tailwind 3.x only.
 {% endcomment %}
 
 <section class="py-14 md:py-18">
     <div class="page-width">
-        {%- assign the_collection = section.settings.collection -%}
-        {%- assign count = section.settings.products_to_show | default: 3 -%}
-
         <!-- Header -->
-        <div class="flex items-start justify-between gap-6 mb-10 md:mb-12">
-            <h2 class="text-[40px] leading-tight md:text-[56px] font-normal">
-                {{ section.settings.title }}
+        <div class="flex items-center justify-between gap-6 mb-10 md:mb-12">
+            <h2 class="text-[40px] leading-tight md:text-[46px] font-normal">
+                {{ section.settings.title }}<span class="italic">{{ section.settings.title_cursive }}</span>
             </h2>
 
-            {%- if section.settings.show_view_all and the_collection != blank -%}
-                <a href="{{ the_collection.url }}"
-                   class="inline-flex items-center gap-2 text-[15px] tracking-[0.06em] uppercase"
-                >
+            {% if section.settings.show_view_all and section.settings.view_all_link != blank %}
+                <a href="{{ section.settings.view_all_link }}"
+                   class="inline-flex items-center gap-2 text-[15px] tracking-[0.06em] uppercase">
                     {{ section.settings.view_all_text | default: 'View all' }}
                     <span aria-hidden="true">→</span>
                 </a>
-            {%- endif -%}
+            {% endif %}
         </div>
 
         <!-- Grid -->
         <div class="grid gap-y-12 gap-x-10 md:grid-cols-3">
-            {%- if the_collection != blank and the_collection.products_count > 0 -%}
-                {%- paginate the_collection.products by count -%}
-                    {%- for product in the_collection.products limit: count -%}
-                        <article class="group">
-                            <a href="{{ product.url }}" class="block">
-                                <div class="relative bg-[#f7f3f1]">
-                                    <!-- Aspect ratio 4/3 on desktop, 1/1 on small if you prefer -->
-                                    <div class="aspect-[4/3]"></div>
+            {%- assign rendered = 0 -%}
+            {%- for block in section.blocks -%}
+                {%- assign p = block.settings.product -%}
+                {%- if p != blank -%}
+                    {%- assign rendered = rendered | plus: 1 -%}
+                    <article class="group" {{ block.shopify_attributes }}>
+                        <a href="{{ p.url }}" class="block">
+                            <div class="flex bg-[#f7f3f1]">
+                                {%- if p.featured_image -%}
                                     <img
-                                            src="{{ product.featured_image | image_url: width: 1200 }}"
+                                            src="{{ p.featured_image | image_url: width: 1200 }}"
                                             srcset="
-                      {{ product.featured_image | image_url: width: 400 }} 400w,
-                      {{ product.featured_image | image_url: width: 800 }} 800w,
-                      {{ product.featured_image | image_url: width: 1200 }} 1200w
+                      {{ p.featured_image | image_url: width: 400 }} 400w,
+                      {{ p.featured_image | image_url: width: 800 }} 800w,
+                      {{ p.featured_image | image_url: width: 1200 }} 1200w
                     "
                                             sizes="(min-width: 990px) 33vw, 90vw"
-                                            alt="{{ product.featured_image.alt | escape }}"
+                                            alt="{{ p.featured_image.alt | escape }}"
                                             loading="lazy"
-                                            class="absolute inset-0 w-full h-full object-contain"
+                                            class="w-full h-full object-contain"
                                     >
-                                </div>
-                            </a>
-
-                            <!-- Meta -->
-                            <div class="mt-6 flex items-start justify-between gap-6">
-                                <a href="{{ product.url }}" class="text-[17px] leading-snug">
-                                    {{ product.title | escape }}
-                                </a>
-
-                                <div class="whitespace-nowrap text-[17px]">
-                                    {%- if product.compare_at_price > product.price -%}
-                                        <span class="line-through opacity-60 mr-2">
-                      {{ product.compare_at_price | money }}
-                    </span>
-                                    {%- endif -%}
-                                    <span>{{ product.price | money }}</span>
-                                </div>
+                                {%- else -%}
+                                    <div class="absolute inset-0 grid place-items-center text-sm opacity-70">
+                                        No image
+                                    </div>
+                                {%- endif -%}
                             </div>
-                        </article>
-                    {%- endfor -%}
-                {%- endpaginate -%}
-            {%- else -%}
-                {%- comment %} Simple placeholders if no collection yet {%- endcomment -%}
+                        </a>
+
+                        <div class="mt-3 flex items-start justify-between gap-6">
+                            <a href="{{ p.url }}" class="text-[1.4rem] leading-snug">
+                                {{ p.title | escape }}
+                            </a>
+                            <div class="whitespace-nowrap text-[1.4rem]">
+                                {%- if p.compare_at_price > p.price -%}
+                                    <span class="line-through opacity-60 mr-2">{{ p.compare_at_price | money }}</span>
+                                {%- endif -%}
+                                <span>{{ p.price | money }}</span>
+                            </div>
+                        </div>
+                    </article>
+                {%- endif -%}
+            {%- endfor -%}
+
+            {%- if rendered == 0 -%}
+                {%- comment %} Simple placeholders if no products added yet {%- endcomment -%}
                 {%- for i in (1..3) -%}
                     <div>
                         <div class="bg-[#f7f3f1] aspect-[4/3] grid place-items-center text-sm opacity-70">
-                            Placeholder
+                            Add a product block
                         </div>
                         <div class="mt-6 flex items-start justify-between">
                             <span class="text-[17px]">Product title</span>
@@ -90,26 +90,19 @@
   "name": "Bestsellers – MAG",
   "tag": "section",
   "class": "section",
+  "max_blocks": 12,
   "settings": [
     {
       "type": "inline_richtext",
       "id": "title",
       "label": "Heading",
-      "default": "Bestsellers"
+      "default": "Best"
     },
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    },
-    {
-      "type": "range",
-      "id": "products_to_show",
-      "label": "Products to show",
-      "min": 1,
-      "max": 12,
-      "step": 1,
-      "default": 3
+      "type": "inline_richtext",
+      "id": "title_cursive",
+      "label": "Heading",
+      "default": "sellers"
     },
     {
       "type": "checkbox",
@@ -122,11 +115,35 @@
       "id": "view_all_text",
       "label": "View all text",
       "default": "VIEW ALL"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View all link",
+      "default": "/collections/all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bestseller_product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Bestsellers – MAG"
+      "name": "Bestsellers - MAG",
+      "blocks": [
+        { "type": "bestseller_product" },
+        { "type": "bestseller_product" },
+        { "type": "bestseller_product" }
+      ]
     }
   ]
 }

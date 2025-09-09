@@ -1,0 +1,91 @@
+<section class="grid mt-14 md:mt-18">
+    <!-- Background image -->
+    {% if section.settings.bg_image %}
+        <div class="col-start-1 row-start-1">
+            <img src="{{ section.settings.bg_image | image_url: width: 1600 }}"
+                 alt="Newsletter background"
+                 class="w-full h-full object-cover">
+        </div>
+    {% endif %}
+
+    <!-- Overlay for better text contrast -->
+    {% comment %} <div class="absolute inset-0 bg-black/0 block" style="display: block"></div> {% endcomment %}
+
+    <div class="col-start-1 row-start-1 relative z-10 mx-auto px-32 flex flex-col w-full h-full justify-start pt-[10vw] text-white">
+        <!-- Heading -->
+        <h2 class="text-[4rem] font-normal mb-4 text-white">
+            {{ section.settings.heading }}
+        </h2>
+
+        <!-- Description -->
+        <p class="mb-6 max-w-3xl">
+            {{ section.settings.description }}
+        </p>
+
+        <!-- Newsletter form -->
+        {% form 'customer', class: 'flex flex-col sm:flex-row gap-4 max-w-xl' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+
+            <!-- Email Input -->
+            <input
+                    type="email"
+                    name="contact[email]"
+                    placeholder="Input your email..."
+                    class="flex-1 p-3 bg-transparent border-b border-white placeholder-white focus:outline-none"
+                    required
+            >
+
+            <!-- Submit Button -->
+            <button type="submit" class="text-white uppercase tracking-wide">
+                {{ section.settings.button_label }}
+            </button>
+
+            <!-- Error Handling -->
+            {% if form.errors %}
+                <p class="text-red-500 mt-2">{{ form.errors.messages.email }}</p>
+            {% endif %}
+
+            <!-- Success Message -->
+            {% if form.posted_successfully? %}
+                <p class="text-green-400 mt-2">Thanks for subscribing!</p>
+            {% endif %}
+        {% endform %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter - MAG",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join our world"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Subscribe to our newsletter and be updated on unique collections and new launches."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View All"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter - MAG"
+    }
+  ]
+}
+{% endschema %}
+
