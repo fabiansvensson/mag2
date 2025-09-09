@@ -1,0 +1,11 @@
+/* Minimal, uses Dawn tokens/classes */
+.hero-text-image { padding-block: clamp(24px, 4vw, 56px); }
+.hero-text-image__title { margin: 0 0 32px; }
+.hero-text-image__subtitle {
+    color: rgb(var(--color-foreground) / 0.70);
+    max-width: 60ch;
+    margin-inline: auto;
+    margin: 0 0 32px;
+}
+.hero-text-image__cta { margin-top: 20px; }
+.hero-text-image__image img { display: block; width: 100%; height: auto; }

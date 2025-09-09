@@ -1,0 +1,65 @@
+{%- comment -%}
+Reusable button
+Params:
+  label (string)
+  href  (url or blank)
+  type ('primary'|'secondary'|'tertiary'|'link'|'ghost')  // 'ghost' can be your custom type
+  classes (extra classes)
+  style (extra styles)
+  new_tab (boolean)
+{%- endcomment -%}
+
+{% doc %}
+MAG-style button snippet supporting multiple variants and an optional arrow icon.
+Parameters:
+- `label` (string): The text to display on the button.
+- `href` (url or blank): The URL the button links to. If blank,
+    the button will be rendered as a disabled link.
+- `type` (string): The button style variant. Options are 'primary', 'secondary', 'tertiary', 'link'.
+    Default is 'primary'.
+- `classes` (string): Additional CSS classes to add to the button.
+- `style` (string): Additional inline styles to add to the button.
+- `new_tab` (boolean): If true, the link will open in a new tab
+- `icon` (string): Optional icon to display. Currently supports 'arrow' to add an arrow icon.
+Example usage:
+```liquid
+{% render 'button',
+    label: 'Shop Now',
+    href: '/collections/all',
+    type: 'primary',
+    classes: 'my-custom-class',
+    style: 'font-weight: bold;',
+    new_tab: true,
+    icon: 'arrow'
+%}
+
+{% enddoc %}
+
+{%- assign variant = type | default: 'primary' -%}
+{%- case variant -%}
+    {%- when 'primary'   -%}{% assign cls = 'button button--primary' %}
+    {%- when 'secondary' -%}{% assign cls = 'button button--secondary' %}
+    {%- when 'tertiary'  -%}{% assign cls = 'button button--tertiary' %}
+    {%- when 'link'      -%}
+        {%- if underline -%}
+            {% assign cls = 'link cta-link' %}
+        {%- else -%}
+            {% assign cls = 'link cta-link no-underline' %}
+        {%- endif -%}
+    {%- else             -%}{% assign cls = 'button button--primary' %}
+{%- endcase -%}
+
+{%- capture extra_classes -%}{% if classes %} {{ classes }}{% endif %}{%- endcapture -%}
+{%- capture extra_styles -%}{% if style %} {{ style }}{% endif %}{%- endcapture -%}
+{%- capture extra_attrs -%}{% if new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}{%- endcapture -%}
+
+{%- capture icon_markup -%}
+    {%- if icon == 'arrow' -%}<span class="button__icon" aria-hidden="true">→</span>{%- endif -%}
+{%- endcapture -%}
+
+{%- if href == blank -%}
+    <a role="link" aria-disabled="true" style="{{ extra_styles }}" class="{{ cls }}{{ extra_classes }}"{{ extra_attrs }}>{{ label | escape }}{{ icon_markup }}</a>
+{%- else -%}
+    <a href="{{ href }}" style="{{ extra_styles }}" class="{{ cls }}{{ extra_classes }}"{{ extra_attrs }}>{{ label | escape }}{{ icon_markup }}</a>
+{%- endif -%}
+

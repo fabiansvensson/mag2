@@ -1,0 +1,218 @@
+{% comment %}
+  Magazine section (3-column editorial block)
+  - Large image (left)
+  - Copy + CTA (middle)
+  - Small image (right)
+  - Headline with emphasized word (color + italic)
+{% endcomment %}
+
+{{ 'custom-buttons.css' | asset_url | stylesheet_tag }}
+{{ 'magazine.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    /* ---- scoped to this instance ---- */
+    .magazine-{{ section.id }} {
+    --mag-gap: clamp(1.6rem, 2.5vw, 3.2rem);
+    }
+
+    .magazine-{{ section.id }} .mag-wrap {
+    margin-inline: auto;
+    }
+
+    .magazine-{{ section.id }} .mag-title {
+    line-height: 1.1;
+    }
+
+    .magazine-{{ section.id }} .mag-title__emph {
+    color: {{ section.settings.emphasis_color }};
+    font-style: italic;
+    }
+
+    .magazine-{{ section.id }} .mag-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr 0.8fr; /* big image / text / small image */
+    gap: var(--mag-gap);
+    align-items: start;
+    }
+
+    .magazine-{{ section.id }} .mag-left img,
+    .magazine-{{ section.id }} .mag-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
+
+    /* Middle column */
+    .magazine-{{ section.id }} .mag-copy {
+    display: grid;
+    gap: 1.6rem;
+    }
+
+    .magazine-{{ section.id }} .mag-cta {
+    margin-top: .4rem;
+    }
+
+    /* Optional link-style CTA look to match your design */
+    .magazine-{{ section.id }} .mag-cta .cta-link {
+    text-underline-offset: 0.3rem;
+    text-decoration: none;
+    position: relative;
+    }
+    .magazine-{{ section.id }} .mag-cta .cta-link:hover {
+    text-decoration: underline;
+    }
+
+    /* Section padding */
+    .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+    @media (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    }
+
+    /* Responsive */
+    @media (max-width: 990px) {
+    .magazine-{{ section.id }} .mag-grid {
+    grid-template-columns: 1fr;
+    }
+    .magazine-{{ section.id }} .mag-right {
+    order: 3;
+    max-width: 520px;
+    }
+    .magazine-{{ section.id }} .mag-left {
+    order: 2;
+    }
+    .magazine-{{ section.id }} .mag-copy {
+    order: 1;
+    }
+    }
+{%- endstyle -%}
+
+<section class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+    <div class="magazine-{{ section.id }}">
+        <div class="mag-wrap page-width">
+
+            {% comment %} Heading {% endcomment %}
+            <div style="display: flex; flex-direction: column;">
+                <h2 class="mag-title mag-title-top {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    {%- if section.settings.title_prefix != blank -%}
+                        {{ section.settings.title_prefix | escape }}
+                    {%- endif -%}
+                </h2>
+                <h2 class="mag-title mag-title-bottom {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    {%- if section.settings.title_emphasis != blank -%}
+                        <span class="mag-title__emph">
+                        {{ section.settings.title_emphasis | escape }}
+                    </span>
+                    {%- endif -%}
+                    {%- if section.settings.title_suffix != blank -%}
+                        {{ section.settings.title_suffix | escape }}
+                    {%- endif -%}
+                </h2>
+            </div>
+
+            <div class="mag-grid{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                {%- comment -%} Left — big image {%- endcomment -%}
+                <div class="mag-left">
+                    {%- if section.settings.main_image != blank -%}
+                        {{ section.settings.main_image
+                        | image_url: width: 2400
+                        | image_tag:
+                        loading: 'lazy',
+                        sizes: '(min-width: 1200px) 60vw, 100vw',
+                        widths: '750, 1100, 1500, 2000, 2400',
+                        alt: section.settings.main_image.alt | escape }}
+                    {%- endif -%}
+                </div>
+
+                {%- comment -%} Middle — copy + CTA {%- endcomment -%}
+                <div class="mag-copy rte">
+                    {%- if section.settings.body != blank -%}
+                        {{ section.settings.body }}
+                    {%- endif -%}
+
+                    {%- if section.settings.cta_label != blank -%}
+                        <div class="mag-cta">
+                            {%- comment -%}
+                              If you have the reusable 'button' snippet we created earlier,
+                              this will render a text-style CTA with arrow:
+                            {%- endcomment -%}
+                            {% render 'button',
+                                    label: section.settings.cta_label,
+                                    href: section.settings.cta_link,
+                                    type: 'link',
+                                    icon: 'arrow',
+                                    style: 'font-weight: 500'
+                            %}
+                        </div>
+                    {%- endif -%}
+                </div>
+
+                {%- comment -%} Right — small image {%- endcomment -%}
+                <div class="mag-right">
+                    {%- if section.settings.side_image != blank -%}
+                        {{ section.settings.side_image
+                        | image_url: width: 1200
+                        | image_tag:
+                        loading: 'lazy',
+                        sizes: '(min-width: 1200px) 24vw, 50vw',
+                        widths: '400, 600, 800, 1000, 1200',
+                        alt: section.settings.side_image.alt | escape }}
+                    {%- endif -%}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Magazine section",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+
+    { "type": "header", "content": "Heading" },
+    { "type": "text", "id": "title_prefix", "label": "Title – prefix", "default": "María Angélica Guerra" },
+    { "type": "text", "id": "title_emphasis", "label": "Title – emphasized word", "default": "Legacy" },
+    { "type": "text", "id": "title_suffix", "label": "Title – suffix", "default": "of Art" },
+    { "type": "select", "id": "heading_size",
+      "label": "Heading size",
+      "default": "h0",
+      "options": [
+        { "value": "h2",  "label": "H2" },
+        { "value": "h1",  "label": "H1" },
+        { "value": "h0",  "label": "H0" },
+        { "value": "hxl", "label": "HXL" }
+      ]
+    },
+    { "type": "color", "id": "emphasis_color", "label": "Emphasis color", "default": "#B14F34" },
+
+    { "type": "header", "content": "Content" },
+    { "type": "richtext", "id": "body", "label": "Body text", "default": "<p>En Mariangélica Guerra, llevamos más de 20 años dedicados a vestir a mujeres con piezas únicas que trascienden el tiempo. Nuestra pasión por la excelencia en el patronaje anatómico, la confección y la atención a cada detalle manual nos define.</p>" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "EXPLORE NOW" },
+    { "type": "url",  "id": "cta_link",  "label": "CTA link" },
+
+    { "type": "header", "content": "Images" },
+    { "type": "image_picker", "id": "main_image", "label": "Main image (left)" },
+    { "type": "image_picker", "id": "side_image", "label": "Side image (right)" },
+
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Top padding", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Bottom padding", "default": 48 }
+  ],
+  "presets": [
+    {
+      "name": "Magazine section",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

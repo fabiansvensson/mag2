@@ -1,0 +1,6 @@
+.cta-link { text-transform: uppercase; letter-spacing: .06em; }
+.cta-link .button__icon { margin-inline-start: .5rem; display:inline-block; line-height:0; }
+.cta-link:hover .button__icon { transform: translateX(4px); transition: transform .2s ease; }
+
+/* remove underline for our text CTA when requested */
+.no-underline { text-decoration: none; }
