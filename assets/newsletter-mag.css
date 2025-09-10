@@ -1,0 +1,20 @@
+.mag-field-label {
+    font-size: 1.6rem;
+    left: calc(var(--inputs-border-width) + 2rem);
+    top: calc(1rem + var(--inputs-border-width));
+    margin-bottom: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: top var(--duration-short) ease, font-size var(--duration-short) ease;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+}
+
+.mag-field-input:focus ~ .mag-field-label,
+.mag-field-input:not(:placeholder-shown) ~ .mag-field-label,
+.mag-field-input:-webkit-autofill ~ .mag-field-label {
+    font-size: 1rem;
+    top: calc(var(--inputs-border-width) + 0.25rem);
+    left: calc(var(--inputs-border-width) + 2rem);
+    letter-spacing: 0.04rem;
+}

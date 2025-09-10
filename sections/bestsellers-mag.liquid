@@ -12,12 +12,24 @@
                 {{ section.settings.title }}<span class="italic">{{ section.settings.title_cursive }}</span>
             </h2>
 
-            {% if section.settings.show_view_all and section.settings.view_all_link != blank %}
-                <a href="{{ section.settings.view_all_link }}"
+            {% comment %}
+            <a href="{{ section.settings.view_all_link }}"
                    class="inline-flex items-center gap-2 text-[15px] tracking-[0.06em] uppercase">
                     {{ section.settings.view_all_text | default: 'View all' }}
                     <span aria-hidden="true">→</span>
                 </a>
+            {% endcomment %}
+            {% if section.settings.show_view_all and section.settings.view_all_link != blank %}
+
+                {% assign button_label = section.settings.view_all_text | default: 'VIEW ALL' %}
+                {% render 'button',
+                        label: button_label,
+                        classes: 'inline-flex items-center gap-2',
+                        type: 'link',
+                        icon: 'arrow',
+                        href: section.settings.view_all_link
+                %}
+
             {% endif %}
         </div>
 

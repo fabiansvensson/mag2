@@ -89,7 +89,7 @@
         "title_emphasis": "Legacy",
         "title_suffix": "of Art",
         "heading_size": "h0",
-        "emphasis_color": "#b14f34",
+        "emphasis_color": "#741c0d",
         "body": "<p>En Mariangélica Guerra, llevamos más de 20 años dedicados a vestir a mujeres con piezas únicas que trascienden el tiempo. Nuestra pasión por la excelencia en el patronaje anatómico, la confección y la atención a cada detalle manual nos define.</p>",
         "cta_label": "EXPLORE NOW",
         "cta_link": "",
@@ -142,8 +142,10 @@
         "image": "shopify://shop_images/IMG_0708_1.jpg",
         "image_alt": "Markus Grey",
         "image_position": "left",
-        "kicker": "A <em>Legacy</em> of",
-        "title": "Colombian Craft",
+        "title_pre": "A",
+        "title_highlight": "Legacy",
+        "title_post": "of Colombian Craft",
+        "emphasis_color": "#741c0d",
         "subtitle": "Timeless fashion, naturally born",
         "body": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
       }
@@ -157,40 +159,6 @@
         "description": "Subscribe to our newsletter and be updated on unique collections and new launches.",
         "button_label": "Sign up"
       }
-    },
-    "newsletter_xyhE4a": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_DetQr7": {
-          "type": "heading",
-          "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_dzNCQg": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
-          }
-        },
-        "email_form_nifApR": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_DetQr7",
-        "paragraph_dzNCQg",
-        "email_form_nifApR"
-      ],
-      "name": "t:sections.newsletter.presets.name",
-      "settings": {
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
@@ -199,7 +167,6 @@
     "magazine_section_6MHi37",
     "bestsellers_mag_gCaiX3",
     "about_split_mag_kBe3pc",
-    "newsletter_mag_aLWerK",
-    "newsletter_xyhE4a"
+    "newsletter_mag_aLWerK"
   ]
 }

@@ -37,17 +37,9 @@
 
             {%- capture text_col -%}
                 <div class="max-w-[72ch] md:pl-2">
-                    {%- if section.settings.kicker != blank -%}
-                        <p class="text-[1.8rem] leading-snug mb-4">
-                            {{ section.settings.kicker }}
-                        </p>
-                    {%- endif -%}
-
-                    {% comment %}{{ section.settings.title }}{% endcomment %}
-
-                    {%- if section.settings.title != blank -%}
+                    {%- if section.settings.title_pre != blank or section.settings.title_highlight != blank or section.settings.title_post != blank -%}
                         <h2 class="text-[4.8rem] max-w-[40rem] leading-[1.4] mb-6">
-                            A <span class="text-[#741C0D] italic">Legacy</span> of Colombian Craft
+                            {{ section.settings.title_pre }} <span class="text-[{{ section.settings.emphasis_color }}] italic">{{ section.settings.title_highlight }}</span> {{ section.settings.title_post }}
                         </h2>
                     {%- endif -%}
 
@@ -103,17 +95,24 @@
       ]
     },
     {
-      "type": "inline_richtext",
-      "id": "kicker",
-      "label": "Kicker (small line above title)",
-      "default": "A <em>Legacy</em> of"
+      "type": "text",
+      "id": "title_pre",
+      "label": "Title Pre",
+      "default": "A"
     },
     {
-      "type": "inline_richtext",
-      "id": "title",
-      "label": "Title",
-      "default": "Colombian Craft"
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Title Highlight",
+      "default": "Legacy"
     },
+    {
+      "type": "text",
+      "id": "title_post",
+      "label": "Title Post",
+      "default": "of Colombian Craft"
+    },
+    { "type": "color", "id": "emphasis_color", "label": "Emphasis color", "default": "#741C0D" },
     {
       "type": "inline_richtext",
       "id": "subtitle",
