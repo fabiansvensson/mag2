@@ -69,6 +69,10 @@
           "label": "Instagram",
           "info": "https://instagram.com/shopify"
         },
+        "social_whatsapp_link": {
+          "label": "WhatsApp",
+          "info": "http://whatsapp.com/shopify"
+        },
         "social_tiktok_link": {
           "label": "TikTok",
           "info": "https://tiktok.com/@shopify"
