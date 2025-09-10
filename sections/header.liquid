@@ -632,6 +632,40 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "mega_image",
+      "name": "Mega menu image",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "trigger",
+          "label": "Top-level menu item title (or handle)",
+          "info": "Type the exact title of the top-level menu item this image belongs to."
+        },
+        {
+          "type": "url",
+          "id": "trigger_url",
+          "label": "Match this menu link",
+          "info": "Pick the same link used for the top-level menu item."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image link (optional)"
+        }
+      ]
     }
   ]
 }

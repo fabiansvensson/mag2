@@ -25,6 +25,21 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_image_XghAhx": {
+          "type": "mega_image",
+          "settings": {
+            "trigger": "Ready-to-wear",
+            "trigger_url": "/",
+            "image": "shopify://shop_images/9496E51A-CE7F-4D21-98E4-DCC25B1D57F3.jpg",
+            "alt": "Ready-to-wear",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_image_XghAhx"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "mobile_logo_position": "center",

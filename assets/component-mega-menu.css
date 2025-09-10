@@ -2,6 +2,19 @@
   position: static;
 }
 
+/* Force the header to stay fixed when a mega menu is open */
+.section-header.force-fixed {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+/* Prevent body scroll when mega-menu is open */
+body.no-scroll {
+  overflow: hidden;
+}
+
 .mega-menu__content {
   background-color: rgb(var(--color-background));
   border-left: 0;
@@ -37,7 +50,7 @@
 .mega-menu__list {
   display: grid;
   gap: 1.8rem 4rem;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   list-style: none;
 }
 

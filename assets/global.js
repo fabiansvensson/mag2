@@ -1330,3 +1330,24 @@ class CartPerformance {
     );
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const megaMenus = document.querySelectorAll('.mega-menu');
+
+  megaMenus.forEach(menu => {
+    menu.addEventListener('toggle', () => {
+      const header = document.querySelector('.section-header');
+
+      if (menu.open) {
+        header.classList.add('force-fixed');
+        document.body.classList.add('no-scroll');
+        document.body.style.paddingTop = 'var(--header-height)';
+      } else {
+        header.classList.remove('force-fixed');
+        document.body.classList.remove('no-scroll');
+        document.body.style.paddingTop = null;
+      }
+    });
+  });
+});
+
