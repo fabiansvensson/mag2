@@ -1,0 +1,159 @@
+{% comment %}
+  Renders a product media gallery. Should be used with 'media-gallery.js'
+  Also see 'product-media-modal'
+
+  Accepts:
+  - product: {Object} Product liquid object
+  - variant_images: {Array} Product images associated with a variant
+  - limit: {Number} (optional) When passed, limits the number of media items to render
+
+  Usage:
+  {% render 'product-media-gallery' %}
+{% endcomment %}
+
+{%- liquid
+  if section.settings.hide_variants and variant_images.size == product.media.size
+    assign single_media_visible = true
+  endif
+
+  if limit == 1
+    assign single_media_visible = true
+  endif
+
+  assign media_count = product.media.size
+  if section.settings.hide_variants and media_count > 1 and variant_images.size > 0
+    assign media_count = media_count | minus: variant_images.size | plus: 1
+  endif
+
+  if media_count == 1 or single_media_visible
+    assign single_media_visible_mobile = true
+  endif
+
+  if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
+    assign hide_mobile_slider = true
+  endif
+
+  if section.settings.media_size == 'large'
+    assign media_width = 0.65
+  elsif section.settings.media_size == 'medium'
+    assign media_width = 0.55
+  elsif section.settings.media_size == 'small'
+    assign media_width = 0.45
+  endif
+-%}
+
+<media-gallery
+    id="MediaGallery-{{ section.id }}"
+    role="region"
+    {% if section.settings.enable_sticky_info %}
+      class="product__column-sticky"
+    {% endif %}
+    aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
+    data-desktop-layout="{{ section.settings.gallery_layout }}"
+>
+  <div class="product-gallery-container flex flex-row gap-6">
+
+    <!-- Thumbnails on the LEFT -->
+    <slider-component
+        id="GalleryThumbnails-{{ section.id }}"
+        class="thumbnail-slider flex flex-col gap-3 w-[80px]"
+    >
+      <ul
+          id="Slider-Thumbnails-{{ section.id }}"
+          class="thumbnail-list flex flex-col gap-3 list-unstyled"
+      >
+        {%- capture sizes -%}
+          80px
+        {%- endcapture -%}
+
+        {%- if featured_media != null -%}
+          <li
+              id="Slide-Thumbnails-{{ section.id }}-0"
+              class="thumbnail-list__item"
+              data-target="{{ section.id }}-{{ featured_media.id }}"
+              data-media-position="1"
+          >
+            {{
+            featured_media.preview_image
+            | image_url: width: 100
+            | image_tag:
+            class: 'thumbnail rounded border border-gray-200 cursor-pointer',
+            sizes: sizes,
+            loading: 'lazy',
+            alt: featured_media.alt
+            }}
+          </li>
+        {%- endif -%}
+
+        {%- for media in product.media -%}
+          {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+            <li
+                id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}"
+                class="thumbnail-list__item"
+                data-target="{{ section.id }}-{{ media.id }}"
+                data-media-position="{{ forloop.index | plus: 1 }}"
+            >
+              <button
+                  class="thumbnail global-media-settings global-media-settings--no-shadow"
+                  type="button"
+                  aria-controls="GalleryViewer-{{ section.id }}"
+              >
+                {{
+                media.preview_image
+                | image_url: width: 100
+                | image_tag: class: 'rounded border border-gray-200', loading: 'lazy', alt: media.alt
+                }}
+              </button>
+            </li>
+          {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    </slider-component>
+
+    <!-- Main Image on the RIGHT -->
+    <slider-component id="GalleryViewer-{{ section.id }}" class="flex-1">
+      <ul
+          id="Slider-Gallery-{{ section.id }}"
+          class="product__media-list list-unstyled"
+      >
+        {%- if featured_media != null -%}
+          <li
+              id="Slide-{{ section.id }}-{{ featured_media.id }}"
+              class="product__media-item is-active"
+              data-media-id="{{ section.id }}-{{ featured_media.id }}"
+          >
+            {{
+            featured_media
+            | image_url: width: 1200
+            | image_tag:
+            class: 'w-full h-auto object-contain',
+            loading: 'lazy',
+            alt: featured_media.alt
+            }}
+          </li>
+        {%- endif -%}
+
+        {%- for media in product.media -%}
+          {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+            <li
+                id="Slide-{{ section.id }}-{{ media.id }}"
+                class="product__media-item"
+                data-media-id="{{ section.id }}-{{ media.id }}"
+            >
+              {{
+              media
+              | image_url: width: 1200
+              | image_tag:
+              class: 'w-full h-auto object-contain',
+              loading: 'lazy',
+              alt: media.alt
+              }}
+            </li>
+          {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    </slider-component>
+
+  </div>
+</media-gallery>
+
