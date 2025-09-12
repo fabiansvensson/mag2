@@ -1,3 +1,25 @@
+.product-gallery-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.thumbnail-list img {
+  transition: border 0.2s ease;
+}
+
+.thumbnail-list img:hover {
+  border-color: #000; /* Highlight on hover */
+}
+
+.product__media-item {
+  display: none;
+}
+
+.product__media-item.is-active {
+  display: block;
+}
+
+
 product-info {
   display: block;
 }
