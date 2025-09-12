@@ -216,25 +216,6 @@
                   {%- endif -%}
                 </p>
 
-              <div class="product-tabs">
-                <ul class="tab-titles">
-                  <li class="active" data-tab="description">Description</li>
-                  <li data-tab="details">Details & Care</li>
-                  <li data-tab="shipping">Shipping & Returns</li>
-                </ul>
-                <div class="tab-content">
-                  <div id="description" class="active">
-                    {{ product.description }}
-                  </div>
-                  <div id="details">
-                    {{ product.metafields.custom.details }}
-                  </div>
-                  <div id="shipping">
-                    {{ product.metafields.custom.shipping }}
-                  </div>
-                </div>
-              </div>
-
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -720,6 +701,26 @@
                 {% render 'icon-with-text', block: block %}
             {%- endcase -%}
           {%- endfor -%}
+
+          <div class="product-tabs">
+            <ul class="tab-titles">
+              <li class="active" data-tab="description">Description</li>
+              <li data-tab="details">Details & Care</li>
+              <li data-tab="shipping">Shipping & Returns</li>
+            </ul>
+            <div class="tab-content">
+              <div id="description" class="active">
+                {{ product.description }}
+              </div>
+              <div id="details">
+                {{ product.metafields.custom.details }}
+              </div>
+              <div id="shipping">
+                {{ product.metafields.custom.shipping }}
+              </div>
+            </div>
+          </div>
+
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
