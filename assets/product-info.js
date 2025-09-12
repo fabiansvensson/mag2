@@ -427,3 +427,14 @@ if (!customElements.get('product-info')) {
     }
   );
 }
+
+
+document.querySelectorAll('.tab-titles li').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.tab-titles li').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content > div').forEach(c => c.classList.remove('active'));
+
+    this.classList.add('active');
+    document.getElementById(this.dataset.tab).classList.add('active');
+  });
+});

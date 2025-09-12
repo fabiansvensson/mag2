@@ -31,6 +31,28 @@
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
+    .tab-titles {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    }
+
+    .tab-titles li.active {
+    border-bottom: 2px solid #000;
+    font-weight: bold;
+    }
+
+    .tab-content > div {
+    display: none;
+    }
+
+    .tab-content > div.active {
+    display: block;
+    }
+
+
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -119,6 +141,7 @@
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                   </div>
                 {%- endif -%}
+                {% comment %}
                 {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
                   <div class="product__tax caption rte">
                     {%- if cart.duties_included and cart.taxes_included -%}
@@ -133,6 +156,7 @@
                     {%- endif -%}
                   </div>
                 {%- endif -%}
+                {% endcomment %}
                 <div {{ block.shopify_attributes }}>
                   {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                   {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -191,6 +215,26 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+
+              <div class="product-tabs">
+                <ul class="tab-titles">
+                  <li class="active" data-tab="description">Description</li>
+                  <li data-tab="details">Details & Care</li>
+                  <li data-tab="shipping">Shipping & Returns</li>
+                </ul>
+                <div class="tab-content">
+                  <div id="description" class="active">
+                    {{ product.description }}
+                  </div>
+                  <div id="details">
+                    {{ product.metafields.custom.details }}
+                  </div>
+                  <div id="shipping">
+                    {{ product.metafields.custom.shipping }}
+                  </div>
+                </div>
+              </div>
+
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
