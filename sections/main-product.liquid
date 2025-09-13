@@ -37,6 +37,7 @@
     border-bottom: 1px solid #ddd;
     margin-bottom: 1rem;
     cursor: pointer;
+    justify-content: space-between;
     }
 
     .tab-titles li.active {
@@ -128,7 +129,7 @@
                   </a>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                <div class="product__price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
                     product: product,
                     use_variant: true,
@@ -215,6 +216,9 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+
+              {%- when 'product_tabs' -%}
+                {% render 'product-tabs', product: product, block: block, section: section %}
 
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
@@ -702,6 +706,7 @@
             {%- endcase -%}
           {%- endfor -%}
 
+          {% comment %}
           <div class="product-tabs">
             <ul class="tab-titles">
               <li class="active" data-tab="description">Description</li>
@@ -720,6 +725,7 @@
               </div>
             </div>
           </div>
+          {% endcomment %}
 
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
@@ -833,6 +839,54 @@
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
       "limit": 1
+    },
+    {
+      "type": "product_tabs",
+      "name": "Product tabs",
+      "limit": 1,
+      "settings": [
+        { "type": "header", "content": "Tab 1" },
+        { "type": "text", "id": "tab1_title", "label": "Title", "default": "Description" },
+        { "type": "select", "id": "tab1_source", "label": "Content source", "default": "description",
+          "options": [
+            { "value": "description", "label": "Product description" },
+            { "value": "metafield_details", "label": "Metafield: custom.details" },
+            { "value": "metafield_shipping", "label": "Metafield: custom.shipping" },
+            { "value": "richtext", "label": "Custom rich text" },
+            { "value": "page", "label": "Page" }
+          ]
+        },
+        { "type": "richtext", "id": "tab1_richtext", "label": "Custom content" },
+        { "type": "page", "id": "tab1_page", "label": "Page" },
+
+        { "type": "header", "content": "Tab 2" },
+        { "type": "text", "id": "tab2_title", "label": "Title", "default": "Details & Care" },
+        { "type": "select", "id": "tab2_source", "label": "Content source", "default": "metafield_details",
+          "options": [
+            { "value": "description", "label": "Product description" },
+            { "value": "metafield_details", "label": "Metafield: custom.details" },
+            { "value": "metafield_shipping", "label": "Metafield: custom.shipping" },
+            { "value": "richtext", "label": "Custom rich text" },
+            { "value": "page", "label": "Page" }
+          ]
+        },
+        { "type": "richtext", "id": "tab2_richtext", "label": "Custom content" },
+        { "type": "page", "id": "tab2_page", "label": "Page" },
+
+        { "type": "header", "content": "Tab 3" },
+        { "type": "text", "id": "tab3_title", "label": "Title", "default": "Shipping & Returns" },
+        { "type": "select", "id": "tab3_source", "label": "Content source", "default": "metafield_shipping",
+          "options": [
+            { "value": "description", "label": "Product description" },
+            { "value": "metafield_details", "label": "Metafield: custom.details" },
+            { "value": "metafield_shipping", "label": "Metafield: custom.shipping" },
+            { "value": "richtext", "label": "Custom rich text" },
+            { "value": "page", "label": "Page" }
+          ]
+        },
+        { "type": "richtext", "id": "tab3_richtext", "label": "Custom content" },
+        { "type": "page", "id": "tab3_page", "label": "Page" }
+      ]
     },
     {
       "type": "sku",

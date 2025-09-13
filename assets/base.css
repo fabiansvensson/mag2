@@ -1298,8 +1298,8 @@ button.shopify-payment-button__button--unbranded {
   z-index: 1;
   border-radius: var(--buttons-radius);
   box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-      rgba(var(--color-button-text), var(--border-opacity)),
-    0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
+      rgba(var(--color-button), var(--border-opacity)),
+    0 0 0 var(--buttons-border-width) rgba(var(--color-button-text), var(--alpha-button-background));
   transition: box-shadow var(--duration-short) ease;
 }
 
@@ -1309,8 +1309,8 @@ button.shopify-payment-button__button--unbranded {
 .shopify-payment-button__button--unbranded:hover::after {
   --border-offset: 1.3px;
   box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-      rgba(var(--color-button-text), var(--border-opacity)),
-    0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background));
+      rgba(var(--color-button), var(--border-opacity)),
+    0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button-text), var(--alpha-button-background));
 }
 
 .button--secondary:after {
@@ -1335,7 +1335,7 @@ button.shopify-payment-button__button--unbranded {
 .button::selection,
 .shopify-challenge__button::selection,
 .customer button::selection {
-  background-color: rgba(var(--color-button-text), 0.3);
+  background-color: rgba(var(--color-button), 0.3);
 }
 
 .button,
@@ -1416,7 +1416,7 @@ shopify-accelerated-checkout-cart {
 }
 
 .button.loading > .loading__spinner .path {
-  stroke: rgb(var(--color-button-text));
+  stroke: rgb(var(--color-button));
 }
 
 /* Button - social share */
@@ -2117,8 +2117,8 @@ input[type='checkbox'] {
 
 .cart-count-bubble {
   position: absolute;
-  background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
+  background-color: rgb(var(--color-button-text));
+  color: rgb(var(--color-button));
   height: 1.7rem;
   width: 1.7rem;
   border-radius: 100%;
@@ -3531,8 +3531,8 @@ details-disclosure > details {
   .animate--hover-vertical-lift .shopify-payment-button__button:not([disabled]):hover:after {
     --border-offset: 0.3px; /* Default is 1.3px as defined above in this file. This removes 1px to prevent the border from growing on buttons when this effect is on.  */
     box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-        rgba(var(--color-button-text), var(--border-opacity)),
-      0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
+        rgba(var(--color-button), var(--border-opacity)),
+      0 0 0 var(--buttons-border-width) rgba(var(--color-button-text), var(--alpha-button-background));
   }
 
   .animate--hover-vertical-lift .button:not([disabled]).button--secondary:hover:after {

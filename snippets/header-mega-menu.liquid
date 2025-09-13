@@ -47,9 +47,7 @@
 
 <script>
   document.addEventListener('click', (e) => {
-    console.log("Click!");
     const backdrop = e.target.closest('.mega-menu__content');
-    console.log("backdrop", backdrop);
     if (!backdrop) return;
 
     // Ignore clicks inside the white panel
