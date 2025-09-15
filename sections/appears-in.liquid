@@ -1,0 +1,166 @@
+{%- comment %} Include any shared Dawn CSS if you need it (optional) {% endcomment -%}
+{%- # 'component-xxx.css' or your own file: 'section-my-custom.css'  -%}
+{%- # {{ 'section-my-custom.css' | asset_url | stylesheet_tag }}  -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  }
+{%- endstyle -%}
+
+{%- assign animations = settings.animations_reveal_on_scroll -%}
+
+<section
+    class="appears-in-{{ section.id }} color-{{ section.settings.color_scheme }} gradient"
+>
+  <div
+      class="page-width section-{{ section.id }}-padding isolate{% if animations %} scroll-trigger animate--slide-in{% endif %}"
+      {% if animations %} data-cascade {% endif %}
+  >
+    {%- if section.settings.heading != blank -%}
+      <h2 class="headline {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="flex flex-row justify-between space-x-12">
+      {%- if section.settings.image_1 != blank -%}
+        <img
+            src="{{ section.settings.image_1 | image_url }}"
+            alt="{{ section.settings.image_1_alt | escape }}"
+            class="w-auto h-auto object-contain"
+            loading="lazy"
+        >
+      {%- endif -%}
+
+      {%- if section.settings.image_2 != blank -%}
+        <img
+            src="{{ section.settings.image_2 | image_url }}"
+            alt="{{ section.settings.image_2_alt | escape }}"
+            class="w-auto h-auto object-contain"
+            loading="lazy"
+        >
+      {%- endif -%}
+
+      {%- if section.settings.image_3 != blank -%}
+        <img
+            src="{{ section.settings.image_3 | image_url }}"
+            alt="{{ section.settings.image_3_alt | escape }}"
+            class="w-auto h-auto object-contain"
+            loading="lazy"
+        >
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Appears In section",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Starter section"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h0",
+          "label": "Hero"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "image_1_alt",
+      "label": "Alt text for image 1",
+      "default": "Describe the first image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "image_2_alt",
+      "label": "Alt text for image 2",
+      "default": "Describe the second image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "image_3_alt",
+      "label": "Alt text for image 3",
+      "default": "Describe the third image"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Appears In section"
+    }
+  ]
+}
+{% endschema %}

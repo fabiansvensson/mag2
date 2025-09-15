@@ -52,12 +52,24 @@
             "tab2_source": "metafield_details",
             "tab2_richtext": "",
             "tab2_page": "",
-            "tab2_default": "Clean in cold water with like colors. Do not bleach. Lay flat to dry. Cool iron if needed.",
             "tab3_title": "Shipping & Returns",
             "tab3_source": "metafield_shipping",
             "tab3_richtext": "",
-            "tab3_default": "Shipping from 3-5 business days. Free returns within 30 days.",
-            "tab3_page": ""
+            "tab3_page": "",
+            "global_details_care_fallback": "<p>Wash at 30–40°C. Do not bleach. See care label for details.</p>",
+            "global_ship_fallback": "<p>Shipping from 3-5 business days. Free returns within 30 days.</p>"
+          }
+        },
+        "icon_with_text_HhVmML": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "plane",
+            "heading_1": "Escribenos",
+            "icon_2": "chat_bubble",
+            "heading_2": "Chat",
+            "icon_3": "clipboard",
+            "heading_3": "Contacta"
           }
         }
       },
@@ -67,7 +79,8 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "product_tabs_jjRmNa"
+        "product_tabs_jjRmNa",
+        "icon_with_text_HhVmML"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -83,43 +96,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
-      "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "multicolumn": {
@@ -186,7 +162,6 @@
   },
   "order": [
     "main",
-    "image-with-text",
     "multicolumn",
     "related-products"
   ]

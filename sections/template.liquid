@@ -1,0 +1,225 @@
+{%- comment -%}
+  My Custom Section - Dawn starter
+  - Scoped padding using section.id
+  - Color schemes, gradient, page-width
+  - Optional on-scroll animation
+  - Editor-safe JS that only runs when this section exists
+{%- endcomment -%}
+
+{%- comment -%}
+  Include any shared Dawn CSS if you need it (optional)
+  # 'component-xxx.css' or your own file: 'section-my-custom.css'
+  # {{ 'section-my-custom.css' | asset_url | stylesheet_tag }}
+{%- endcomment -%}
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round }}px;
+  }
+  @media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  }
+
+  .my-custom-{{ section.id }} .headline { margin-bottom: 1rem; }
+{%- endstyle -%}
+
+{%- assign animations = settings.animations_reveal_on_scroll -%}
+
+<section
+    class="my-custom my-custom-{{ section.id }} color-{{ section.settings.color_scheme }} gradient"
+>
+  <div
+      class="page-width section-{{ section.id }}-padding isolate{% if animations %} scroll-trigger animate--slide-in{% endif %}"
+      {% if animations %} data-cascade {% endif %}
+  >
+    {%- if section.settings.heading != blank -%}
+      <h2 class="headline {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="my-custom__grid dawn-grid grid--1-col grid--2-col-tablet">
+        {%- for block in section.blocks -%}
+          <div class="my-custom__item" {{ block.shopify_attributes }}
+          {% if animations %} style="--animation-order: {{ forloop.index }};" {% endif %}>
+            {%- case block.type -%}
+              {%- when 'text' -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="rte">{{ block.settings.text }}</div>
+                {%- endif -%}
+              {%- when 'image' -%}
+                {%- if block.settings.image -%}
+                  {{ block.settings.image | image_url: width: 1600 | image_tag: class: 'my-custom__image' }}
+                {%- endif -%}
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="my-custom__cta">
+        <a
+            class="button button--primary"
+            {% if section.settings.button_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.button_link }}"
+            {% endif %}
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{%- comment -%}
+  Optional section-scoped JS. Loads only if the section is present and
+  re-binds on theme editor events.
+{%- endcomment -%}
+<script>
+  (function() {
+    function init(root) {
+      const container = root.querySelector('.my-custom-{{ section.id }}');
+      if (!container) return;
+      // …your JS here (bind listeners, sliders, whatever) …
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      init(document);
+    });
+    document.addEventListener('shopify:section:load', function(e) {
+      if (e.target.id?.endsWith('{{ section.id }}')) init(e.target);
+    });
+    document.addEventListener('shopify:section:select', function(e) {
+      if (e.target.id?.endsWith('{{ section.id }}')) init(e.target);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "My custom section",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Starter section"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h0",
+          "label": "Hero"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colors",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add some content.</p>"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "My custom section",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
