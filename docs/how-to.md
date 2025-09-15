@@ -19,3 +19,7 @@ Push local changes:
 shopify theme push --theme 184318951768
 shopify theme dev --store 6d7x13-ca.myshopify.com
 shopify theme pull --theme 184318951768
+
+## Tailwind
+In separate terminal window, run:
+`npx tailwindcss -i ./tailwind.css -o ./assets/tailwind.css --watch`
