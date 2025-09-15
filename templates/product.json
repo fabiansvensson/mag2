@@ -98,6 +98,22 @@
         "padding_bottom": 12
       }
     },
+    "appears_in_TDWN8W": {
+      "type": "appears-in",
+      "name": "Appears In section",
+      "settings": {
+        "heading": "Starter section",
+        "heading_size": "h2",
+        "image_1": "shopify://shop_images/ZIM-FALL-25_CAMPAIGN_CROP_2.jpg",
+        "image_1_alt": "Describe the first image",
+        "image_2": "shopify://shop_images/ZIM-FALL-25_CAMPAIGN_CROP_1_1.jpg",
+        "image_2_alt": "Describe the second image",
+        "image_3": "shopify://shop_images/ZIM-FALL-25_CAMPAIGN_CROP_3.jpg",
+        "image_3_alt": "Describe the third image",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
@@ -162,6 +178,7 @@
   },
   "order": [
     "main",
+    "appears_in_TDWN8W",
     "multicolumn",
     "related-products"
   ]
