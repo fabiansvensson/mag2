@@ -57,11 +57,6 @@
     {%- endif -%}
   </ul>
 
-  <script>
-    console.log("Category: {{ product.category }}");
-    console.log("Type: {{ product.type }}");
-  </script>
-
   {%- liquid
     # Prefer the full breadcrumb name if present
     assign _cat_key = product.category.full_name | default: product.category.name
@@ -72,7 +67,19 @@
 
     # shipping_guideline(metaobject): fields -> category_key (text), policy (rich text)
     assign _ship_entry = shop.metaobjects.shipping_guideline.values | where: 'category_key', _cat_key | first
+
   -%}
+
+  <script>
+    console.log("Category: {{ product.category }}");
+    console.log("Type: {{ product.type }}");
+    console.log("Care guidelines handle: {{ _care_entry.system.handle }}");
+    console.log("Care guidelines id: {{ _care_entry.system.id }}");
+    console.log("Care guidelines type: {{ _care_entry.system.type }}");
+    console.log("Care guidelines url: {{ _care_entry.system.url }}");
+    console.log("Ship guidelines: {{ _ship_entry }}");
+    console.log("block.settings.tab3_default: ", {{ block.settings }});
+  </script>
 
   <div class="tab-content">
     {%- assign tab1_active = 'active' -%}
@@ -91,10 +98,10 @@
               {%- liquid
                 assign _out = product.metafields.custom.details
                 if _out == blank and _care_entry
-                  assign _out = _care_entry.guidelines
+                  assign _out = _care_entry.guidelines | metafield_tag
                 endif
                 if _out == blank
-                  assign _out = block.settings.tab2_default
+                  assign _out = block.settings.global_details_care_fallback
                 endif
               -%}
               {{ _out }}
@@ -103,10 +110,10 @@
               {%- liquid
                 assign _out = product.metafields.custom.shipping
                 if _out == blank and _ship_entry
-                  assign _out = _ship_entry.policy
+                  assign _out = _ship_entry.policy | metafield_tag
                 endif
                 if _out == blank
-                  assign _out = block.settings.tab3_default
+                  assign _out = block.settings.global_ship_fallback
                 endif
               -%}
               {{ _out }}

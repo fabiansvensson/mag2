@@ -706,27 +706,6 @@
             {%- endcase -%}
           {%- endfor -%}
 
-          {% comment %}
-          <div class="product-tabs">
-            <ul class="tab-titles">
-              <li class="active" data-tab="description">Description</li>
-              <li data-tab="details">Details & Care</li>
-              <li data-tab="shipping">Shipping & Returns</li>
-            </ul>
-            <div class="tab-content">
-              <div id="description" class="active">
-                {{ product.description }}
-              </div>
-              <div id="details">
-                {{ product.metafields.custom.details }}
-              </div>
-              <div id="shipping">
-                {{ product.metafields.custom.shipping }}
-              </div>
-            </div>
-          </div>
-          {% endcomment %}
-
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -872,7 +851,6 @@
         },
         { "type": "richtext", "id": "tab2_richtext", "label": "Custom content" },
         { "type": "page", "id": "tab2_page", "label": "Page" },
-
         { "type": "header", "content": "Tab 3" },
         { "type": "text", "id": "tab3_title", "label": "Title", "default": "Shipping & Returns" },
         { "type": "select", "id": "tab3_source", "label": "Content source", "default": "metafield_shipping",
@@ -885,7 +863,19 @@
           ]
         },
         { "type": "richtext", "id": "tab3_richtext", "label": "Custom content" },
-        { "type": "page", "id": "tab3_page", "label": "Page" }
+        { "type": "page", "id": "tab3_page", "label": "Page" },
+        {
+          "type": "richtext",
+          "id": "global_details_care_fallback",
+          "label": "Global Details & Care fallback",
+          "default": "<p>Wash at 30–40°C. Do not bleach. See care label for details.</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "global_ship_fallback",
+          "label": "Global Shipping fallback",
+          "default": "<p>Shipping from 3-5 business days. Free returns within 30 days.</p>"
+        }
       ]
     },
     {

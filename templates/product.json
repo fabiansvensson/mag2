@@ -52,12 +52,12 @@
             "tab2_source": "metafield_details",
             "tab2_richtext": "",
             "tab2_page": "",
-            "tab2_default": "<p>Wash at 30–40°C. Do not bleach. See care label for details.</p>",
+            "tab2_default": "Clean in cold water with like colors. Do not bleach. Lay flat to dry. Cool iron if needed.",
             "tab3_title": "Shipping & Returns",
             "tab3_source": "metafield_shipping",
             "tab3_richtext": "",
-            "tab3_page": "",
-            "tab3_default": "<p>Shipping from Spain in 1-3 business days. If stock is missing in Spain shipping is done from Colombia in 5-7 business days.</p>"
+            "tab3_default": "Shipping from 3-5 business days. Free returns within 30 days.",
+            "tab3_page": ""
           }
         }
       },
