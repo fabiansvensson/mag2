@@ -34,6 +34,12 @@
   });*/
 </script>
 
+<style>
+  .tab-content p {
+      font-size: 1.4rem;
+  }
+</style>
+
 
 <div class="product-tabs" {{ block.shopify_attributes }}>
   <ul class="tab-titles" role="tablist">
@@ -51,6 +57,23 @@
     {%- endif -%}
   </ul>
 
+  <script>
+    console.log("Category: {{ product.category }}");
+    console.log("Type: {{ product.type }}");
+  </script>
+
+  {%- liquid
+    # Prefer the full breadcrumb name if present
+    assign _cat_key = product.category.full_name | default: product.category.name
+
+    # Look up category defaults in metaobjects (create these in Admin → Content → Metaobjects)
+    # care_guideline(metaobject): fields -> category_key (text), guidelines (rich text)
+    assign _care_entry = shop.metaobjects.care_guideline.values | where: 'category_key', _cat_key | first
+
+    # shipping_guideline(metaobject): fields -> category_key (text), policy (rich text)
+    assign _ship_entry = shop.metaobjects.shipping_guideline.values | where: 'category_key', _cat_key | first
+  -%}
+
   <div class="tab-content">
     {%- assign tab1_active = 'active' -%}
     {%- for i in (1..3) -%}
@@ -63,18 +86,41 @@
           {%- case source -%}
             {%- when 'description' -%}
               {{ product.description }}
+
             {%- when 'metafield_details' -%}
-              {{ product.metafields.custom.details }}
+              {%- liquid
+                assign _out = product.metafields.custom.details
+                if _out == blank and _care_entry
+                  assign _out = _care_entry.guidelines
+                endif
+                if _out == blank
+                  assign _out = block.settings.tab2_default
+                endif
+              -%}
+              {{ _out }}
+
             {%- when 'metafield_shipping' -%}
-              {{ product.metafields.custom.shipping }}
+              {%- liquid
+                assign _out = product.metafields.custom.shipping
+                if _out == blank and _ship_entry
+                  assign _out = _ship_entry.policy
+                endif
+                if _out == blank
+                  assign _out = block.settings.tab3_default
+                endif
+              -%}
+              {{ _out }}
+
             {%- when 'richtext' -%}
               {%- assign block_key = "tab" | append: i | append: "_richtext" -%}
               {{ block.settings[block_key] }}
+
             {%- when 'page' -%}
               {%- assign pg_key = "tab" | append: i | append: "_page" -%}
               {%- assign pg = block.settings[pg_key] -%}
               {%- if pg and pg.content -%}{{ pg.content }}{%- endif -%}
           {%- endcase -%}
+
         </div>
         {%- assign tab1_active = '' -%}
       {%- endif -%}
