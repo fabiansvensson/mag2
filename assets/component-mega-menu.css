@@ -68,6 +68,11 @@ body.no-scroll {
 .mega-menu__link--level-2 {
   font-weight: bold;
 }
+.mega-menu__link--level-2:hover {
+  cursor: default;
+  text-decoration: none !important;
+  color: rgba(var(--color-foreground), 0.75) !important;
+}
 
 .header--top-center .mega-menu__list {
   display: flex;
