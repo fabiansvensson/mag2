@@ -1,7 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "rich_text_iHXtAe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_VDBhpG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contáctanos",
+            "heading_size": "h1"
+          }
+        },
+        "text_LBMpxn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Puede contactarnos completando el formulario de contacto o, si lo prefiere, escribiendo directamente a nuestro correo electrónico: <a>info@mariangelicaguerra.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_VDBhpG",
+        "text_LBMpxn"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
@@ -19,6 +60,7 @@
     }
   },
   "order": [
+    "rich_text_iHXtAe",
     "main",
     "form"
   ]

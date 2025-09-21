@@ -71,6 +71,32 @@
             "icon_3": "clipboard",
             "heading_3": "Contacta"
           }
+        },
+        "wishlist_plus_wishlist_pdp_button_kmdPmn": {
+          "type": "shopify://apps/wishlist-plus/blocks/wishlist-pdp-button/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+          "settings": {
+            "swym_atw_button_icon": "heart",
+            "swym_atw_icon_thickness": 1.1,
+            "swym_atw_display_btn_text": false,
+            "swym_button_position": "add_to_cart_button_right",
+            "swym_atw_button_vertical_offset": -6,
+            "swym_atw_full_width": false,
+            "swym_atw_button_alignment": "center",
+            "swym_add_to_wishlist_color": "#ffffff",
+            "swym_added_to_wishlist_color": "#ffffff",
+            "swym_button_text_color": "#222222",
+            "swym_atw_border_color": "#000000",
+            "swym_atw_border_thickness": 0,
+            "swym_atw_button_border_radius": 0,
+            "swym_enable_hover_customization": false,
+            "swym_hover_add_to_wishlist_color": "#000000",
+            "swym_hover_added_to_wishlist_color": "#222222",
+            "swym_hover_button_text_color": "#ffffff",
+            "swym_hover_atw_border_color": "#000000",
+            "swym_hover_atw_border_thickness": 0,
+            "swym_hover_atw_button_border_radius": 0,
+            "swym_custom_css": ""
+          }
         }
       },
       "block_order": [
@@ -80,13 +106,14 @@
         "variant_picker",
         "buy_buttons",
         "product_tabs_jjRmNa",
-        "icon_with_text_HhVmML"
+        "icon_with_text_HhVmML",
+        "wishlist_plus_wishlist_pdp_button_kmdPmn"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
         "media_size": "large",
-        "constrain_to_viewport": true,
+        "constrain_to_viewport": false,
         "media_fit": "contain",
         "gallery_layout": "thumbnail",
         "mobile_thumbnails": "hide",
@@ -102,13 +129,13 @@
       "type": "appears-in",
       "name": "Appears In section",
       "settings": {
-        "heading": "Starter section",
+        "heading": "Aparece en",
         "heading_size": "h2",
-        "image_1": "shopify://shop_images/ZIM-FALL-25_CAMPAIGN_CROP_2.jpg",
+        "image_1": "shopify://shop_images/3.png",
         "image_1_alt": "Describe the first image",
-        "image_2": "shopify://shop_images/ZIM-FALL-25_CAMPAIGN_CROP_1_1.jpg",
+        "image_2": "shopify://shop_images/5_991ce1d0-f155-4454-9146-1e3e67a3db30.png",
         "image_2_alt": "Describe the second image",
-        "image_3": "shopify://shop_images/ZIM-FALL-25_CAMPAIGN_CROP_3.jpg",
+        "image_3": "shopify://shop_images/6.png",
         "image_3_alt": "Describe the third image",
         "padding_top": 64,
         "padding_bottom": 36
@@ -186,12 +213,12 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "padding_top": 36,
+        "padding_top": 16,
         "padding_bottom": 28
       }
     }

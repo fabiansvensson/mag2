@@ -77,19 +77,37 @@
     /* Responsive */
     @media (max-width: 990px) {
     .magazine-{{ section.id }} .mag-grid {
-    grid-template-columns: 1fr;
+    display: flex; flex-direction: row;
     }
     .magazine-{{ section.id }} .mag-right {
-    order: 3;
-    max-width: 520px;
+    display: none;
     }
     .magazine-{{ section.id }} .mag-left {
-    order: 2;
+      flex: 1 1 100px;
     }
-    .magazine-{{ section.id }} .mag-copy {
-    order: 1;
+  .magazine-{{ section.id }} .mag-copy {
+    flex: 1 1 200px;
+  }
+
     }
-    }
+
+  @media (max-width: 750px) {
+  .magazine-{{ section.id }} .mag-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  }
+  .magazine-{{ section.id }} .mag-right {
+  display: none;
+  }
+  .magazine-{{ section.id }} .mag-left {
+  order: 1;
+  max-width: 640px;
+  }
+  .magazine-{{ section.id }} .mag-copy {
+  order: 2;
+  }
+  }
+
 {%- endstyle -%}
 
 <section class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">

@@ -34,15 +34,15 @@
         </div>
 
         <!-- Grid -->
-        <div class="grid gap-y-12 gap-x-10 md:grid-cols-3">
+        <div class="flex flex-row flex-wrap justify-evenly items-stretch md:grid gap-y-12 gap-x-10 md:grid-cols-3">
             {%- assign rendered = 0 -%}
             {%- for block in section.blocks -%}
                 {%- assign p = block.settings.product -%}
                 {%- if p != blank -%}
                     {%- assign rendered = rendered | plus: 1 -%}
-                    <article class="group" {{ block.shopify_attributes }}>
-                        <a href="{{ p.url }}" class="block">
-                            <div class="flex bg-[#f7f3f1]">
+                    <article class="group flex flex-col w-full xs:w-fit" {{ block.shopify_attributes }}>
+                        <a href="{{ p.url }}" class="block flex-1">
+                            <div class="flex h-full bg-[#f7f3f1] xs:max-h-[50vw] sm:max-h-none">
                                 {%- if p.featured_image -%}
                                     <img
                                             src="{{ p.featured_image | image_url: width: 1200 }}"
@@ -54,7 +54,7 @@
                                             sizes="(min-width: 990px) 33vw, 90vw"
                                             alt="{{ p.featured_image.alt | escape }}"
                                             loading="lazy"
-                                            class="w-full h-full object-contain"
+                                            class="w-full h-full object-contain max-h-full"
                                     >
                                 {%- else -%}
                                     <div class="absolute inset-0 grid place-items-center text-sm opacity-70">

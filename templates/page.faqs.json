@@ -9,19 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "about-split-mag",
-      "settings": {
-        "image_alt": "",
-        "image_position": "left",
-        "title_pre": "A",
-        "title_highlight": "Legacy",
-        "title_post": "of Colombian Craft",
-        "emphasis_color": "#741c0d",
-        "subtitle": "Timeless fashion, naturally born",
-        "body": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
-      }
-    },
     "rich_text_6c9NHb": {
       "type": "rich-text",
       "blocks": {
@@ -55,6 +42,7 @@
         "text_fP89Pz",
         "button_BX8JyE"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
@@ -64,10 +52,40 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "main": {
+      "type": "about-split-mag",
+      "disabled": true,
+      "settings": {
+        "image_alt": "",
+        "image_position": "left",
+        "title_pre": "A",
+        "title_highlight": "Legacy",
+        "title_post": "of Colombian Craft",
+        "emphasis_color": "#741c0d",
+        "subtitle": "Timeless fashion, naturally born",
+        "body": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
+      }
+    },
+    "1758206642e98924eb": {
+      "type": "apps",
+      "blocks": {
+        "storefaq_app_faq_block_djLppN": {
+          "type": "shopify://apps/storefaq/blocks/app-faq-block/dc9cece5-2ed3-4be3-b050-3177694a942b",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "storefaq_app_faq_block_djLppN"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "rich_text_6c9NHb",
-    "main"
+    "main",
+    "1758206642e98924eb"
   ]
 }

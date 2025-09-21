@@ -42,6 +42,7 @@
                   picker_type: picker_type
               %}
             </div>
+
             <legend class="form__label">
               <span data-selected-value>
               {{- option.selected_value -}}
@@ -51,7 +52,34 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
+          <div class="flex flex-row w-full justify-between">
+            <legend class="form__label">{{ option.name }}</legend>
+
+            {%- if should_show_size_guide -%}
+              <button
+                  type="button"
+                  class="text-sm underline underline-offset-2"
+                  data-size-guide="true"
+                  data-target="{{ block.settings.size_guide_target | escape }}"
+                  data-product-id="{{ product.id }}"
+                  data-section-id="{{ section.id }}"
+                  aria-controls="{{ block.settings.size_guide_target | escape }}"
+              >
+                {{ block.settings.size_guide_label | escape }}
+              </button>
+            {%- endif -%}
+            <button
+                type="button"
+                class="text-base underline underline-offset-2"
+                data-size-guide="true"
+                data-target="{{ block.settings.size_guide_target | escape }}"
+                data-product-id="{{ product.id }}"
+                data-section-id="{{ section.id }}"
+                aria-controls="{{ block.settings.size_guide_target | escape }}"
+            >
+              {{ block.settings.size_guide_label | escape }}
+            </button>
+          </div>
           {% render 'product-variant-options',
             product: product,
             option: option,

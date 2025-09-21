@@ -9,37 +9,25 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "about-split-mag",
-      "settings": {
-        "image_alt": "",
-        "image_position": "left",
-        "title_pre": "A",
-        "title_highlight": "Legacy",
-        "title_post": "of Colombian Craft",
-        "emphasis_color": "#741c0d",
-        "subtitle": "Timeless fashion, naturally born",
-        "body": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
-      }
-    },
     "rich_text_6c9NHb": {
       "type": "rich-text",
       "blocks": {
         "heading_XYgcPT": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Our <em>World</em>",
             "heading_size": "h1"
           }
         },
         "text_fP89Pz": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>En San Diego, Cesar, a Mariangélica le decían <em>GK</em>. En ese rincón del Caribe colombiano, donde el sol es intenso y la vida puede ser dura,<strong> los sueños no siempre encuentran espacio para florecer</strong>. Pero GK soñaba. Entre telas prestadas, muñecas vestidas con retazos y mariposas que cazaba para luego liberar, comenzó a gestarse<strong> una historia de amor, resiliencia y belleza.</strong></p>"
           }
         },
         "button_BX8JyE": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "Button label",
             "button_link": "",
@@ -64,10 +52,106 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "main": {
+      "type": "about-split-mag",
+      "settings": {
+        "image": "shopify://shop_images/DSCN7144.jpg",
+        "image_alt": "",
+        "image_position": "left",
+        "title_pre": "A",
+        "title_highlight": "Legacy",
+        "title_post": "of Colombian Craft",
+        "emphasis_color": "#741c0d",
+        "subtitle": "Cuando la vida se quebró",
+        "body": "<p>En 2002, la adversidad los golpeó con fuerza: una quiebra lo cambió todo. Y en 2005, sin más riqueza que su fe y sus hijos, Mariangélica y Yecid —su eterno compañero y amor de su vida— tomaron la decisión de empezar de nuevo. <strong>Partieron hacia Medellín con dos maletas y cuatro de sus cinco hijos</strong>, dejando atrás el desierto de La Guajira y las montañas del Cesar, para enfrentarse a una ciudad desconocida con el corazón lleno de esperanza.</p><p><strong>Yecid no fue un hombre común. </strong>En una tierra donde el machismo dicta destinos, él eligió lo contrario: soltar su seguridad para abrazar el sueño de la mujer que amaba. Transformó su vida en la de un cómplice absoluto. Y desde entonces, tras 27 años de matrimonio, aún caminan juntos como novios, recordándonos que el amor también puede ser un acto de rebeldía.</p>"
+      }
+    },
+    "rich_text_crfmiG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mNVDjC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Una <em>familia</em> hecha taller",
+            "heading_size": "h2"
+          }
+        },
+        "text_Ab9a6p": {
+          "type": "text",
+          "settings": {
+            "text": "<p>De esa apuesta nació más que una marca: nació un taller que es hogar.<strong> Un espacio habitado en su mayoría por mujeres madres cabeza de hogar,</strong> que, al igual que Mariangélica, decidieron reescribir su destino a través de la confección, la pintura textil y la artesanía. Algunas llevan más de diez años a nuestro lado, y ya son parte inseparable de esta familia. Cada prenda lleva en sus puntadas no solo hilos, sino historias: de lucha, de segundas oportunidades, de dignidad.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mNVDjC",
+        "text_Ab9a6p"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_DCy3UV": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Propuesta_Maria_Lilia_Guerra.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rich_text_pWGbi7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_E7APAY": {
+          "type": "heading",
+          "settings": {
+            "heading": "La <em>magia</em> de coser futuro",
+            "heading_size": "h2"
+          }
+        },
+        "text_mjCFW9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mariangélica Guerra es testimonio de que con dos maletas y un sueño roto también se puede bordar esperanza. Somos una familia que aprendió a transformar la adversidad en magia, el desierto en inspiración y el amor en una fuerza creadora.<br/><strong><br/>Cada vestido es un recuerdo hecho materia, un fragmento de memoria que se convierte en presente. Vestimos no solo cuerpos, sino también historias, sueños y corazones.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_E7APAY",
+        "text_mjCFW9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "rich_text_6c9NHb",
-    "main"
+    "main",
+    "rich_text_crfmiG",
+    "image_banner_DCy3UV",
+    "rich_text_pWGbi7"
   ]
 }

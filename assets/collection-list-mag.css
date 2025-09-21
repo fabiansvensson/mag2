@@ -24,3 +24,7 @@
 .grid--peek {
     scroll-padding-inline: 1.6rem;
 }
+
+@media screen and (min-width: 990px) {
+    .collection-mag__title{ margin-left:0.75rem; }
+}

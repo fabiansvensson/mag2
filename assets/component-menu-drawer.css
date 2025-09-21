@@ -30,10 +30,12 @@ menu-drawer > details[open] > summary::before {
   transform: translateX(-100%);
   visibility: hidden;
   z-index: 3;
-  left: 0;
-  top: 100%;
-  width: 100%;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  top: calc(100% + 12px);
   padding: 0;
+  border-radius: 8px;
   background-color: rgb(var(--color-background));
   overflow-x: hidden;
   filter: drop-shadow(
@@ -43,8 +45,8 @@ menu-drawer > details[open] > summary::before {
 }
 
 .js .menu-drawer {
-  height: calc(100vh - 100%);
-  height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
+  height: calc(100vh - 100% - 24px);
+  height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)) - 24px);
 }
 
 .js details[open] > .menu-drawer,

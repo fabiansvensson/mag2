@@ -14,12 +14,12 @@
       "name": "Hero — text + image",
       "settings": {
         "kicker": "",
-        "heading": "Los Reflejos del río Collection",
-        "subheading": "<p>A perpetual symbol of fascinating metamorphoses and captivating seduction</p>",
+        "heading": "Flora by Mariangélica Guerra",
+        "subheading": "<p>An eternal ode to blooming beauty, where femininity flourishes and </p><p>nature whispers in every petal.</p>",
         "cta_label": "Shop now",
         "cta_link": "",
-        "image_desktop": "shopify://shop_images/banner_img.jpg",
-        "image_mobile": "shopify://shop_images/banner-phone.jpg",
+        "image_desktop": "shopify://shop_images/8A03A796-EC07-4001-AC2C-9084D18C369C_1_201_a.jpg",
+        "image_mobile": "shopify://shop_images/Dis5eno_sin_titulo.png",
         "image_alt": ""
       }
     },
@@ -66,17 +66,17 @@
       ],
       "name": "Collection list - MAG",
       "settings": {
-        "title": "Our Collections",
+        "title": "",
         "heading_size": "h1",
         "image_ratio": "square",
         "columns_desktop": 5,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "full_bleed": true,
         "enable_desktop_slider": true,
         "swipe_on_mobile": true,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_text": "VIEW ALL",
-        "padding_top": 36,
+        "padding_top": 24,
         "padding_bottom": 36
       }
     },
@@ -92,7 +92,7 @@
         "emphasis_color": "#741c0d",
         "body": "<p>En Mariangélica Guerra, llevamos más de 20 años dedicados a vestir a mujeres con piezas únicas que trascienden el tiempo. Nuestra pasión por la excelencia en el patronaje anatómico, la confección y la atención a cada detalle manual nos define.</p>",
         "cta_label": "EXPLORE NOW",
-        "cta_link": "",
+        "cta_link": "shopify://pages/our-world",
         "main_image": "shopify://shop_images/VQD2023_DSC_2950_1.jpg",
         "side_image": "shopify://shop_images/La_moda_i_el_cuore_-_3_1.jpg",
         "padding_top": 48,
@@ -137,6 +137,7 @@
     },
     "about_split_mag_kBe3pc": {
       "type": "about-split-mag",
+      "disabled": true,
       "name": "About split – MAG",
       "settings": {
         "image": "shopify://shop_images/IMG_0708_1.jpg",
@@ -154,7 +155,7 @@
       "type": "newsletter-mag",
       "name": "Newsletter - MAG",
       "settings": {
-        "bg_image": "shopify://shop_images/bkg.jpg",
+        "bg_image": "shopify://shop_images/Diseno_6sin_titulo.png",
         "heading": "Join our world",
         "description": "Subscribe to our newsletter and be updated on unique collections and new launches.",
         "button_label": "Sign up"
