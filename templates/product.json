@@ -149,33 +149,30 @@
         "padding_bottom": 20
       }
     },
-    "multicolumn_dX649x": {
-      "type": "multicolumn",
+    "multicolumn_aparece_en_crAzCW": {
+      "type": "multicolumn-aparece-en",
       "blocks": {
-        "column_gELU3Y": {
+        "column_QML4pG": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/6_5791aa24-e170-42ba-bb0d-7dc613eae90f.png",
             "title": "",
             "text": "",
             "link_label": "",
             "link": ""
           }
         },
-        "column_JwmHDx": {
+        "column_n4YFP3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/5_991ce1d0-f155-4454-9146-1e3e67a3db30.png",
             "title": "",
             "text": "",
             "link_label": "",
             "link": ""
           }
         },
-        "column_YPedBa": {
+        "column_XCxgwT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/3.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -184,20 +181,20 @@
         }
       },
       "block_order": [
-        "column_gELU3Y",
-        "column_JwmHDx",
-        "column_YPedBa"
+        "column_QML4pG",
+        "column_n4YFP3",
+        "column_XCxgwT"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
-        "column_alignment": "center",
+        "column_alignment": "left",
         "background_style": "none",
         "color_scheme": "",
         "columns_mobile": "1",
@@ -307,7 +304,7 @@
   "order": [
     "main",
     "appears_in_TDWN8W",
-    "multicolumn_dX649x",
+    "multicolumn_aparece_en_crAzCW",
     "multicolumn",
     "custom_liquid_Vwppyg",
     "related-products",
