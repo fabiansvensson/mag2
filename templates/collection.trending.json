@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "about_split_mag_zr3mw4": {
+      "type": "about-split-mag",
+      "name": "About split – MAG",
+      "settings": {
+        "image": "shopify://shop_images/64_010af8db-de2e-4bc1-b134-cdf0965770ee.jpg",
+        "image_alt": "",
+        "image_position": "left",
+        "title_pre": "Our",
+        "title_highlight": "Very",
+        "title_post": "Bestsellers",
+        "emphasis_color": "#741C0D",
+        "subtitle": "Timeless fashion, naturally born",
+        "body": "<p>En Mariangélica Guerra, llevamos más de 20 años dedicados a vestir a mujeres con piezas únicas que trascienden el tiempo. </p><p>Nuestra pasión por la excelencia en el patronaje<br/>anatomico, la confección y la atención a cada detalle manual nos define.</p><p><br/>Cada diseño cuenta una historia y refleja una conexión íntima con autenticidad, elegancia y orgullo por lo que somos.<br/></p>"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "about_split_mag_zr3mw4",
+    "product-grid"
+  ]
+}

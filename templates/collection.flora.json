@@ -1,0 +1,111 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "magazine_section_mxKzNY": {
+      "type": "magazine-section",
+      "name": "Magazine section",
+      "settings": {
+        "color_scheme": "",
+        "title_prefix": "María Angélica Guerra",
+        "title_emphasis": "Legacy",
+        "title_suffix": "of Flora",
+        "heading_size": "h0",
+        "emphasis_color": "#8b3da1",
+        "body": "<p>Flora es una colección inspirada en los vibrantes <strong>paisajes de La Guajira</strong>, donde la resiliencia y la belleza conviven en el desierto. </p><p>Basadas en los colores y formas de la bugambilia y<strong> la flora autóctona del norte de Colombia</strong>, las piezas encarnan fuerza, delicadeza y memoria. A través de la artesanía y el diseño poético, la colección celebra la naturaleza como fuente de identidad y <strong>como pozo inagotable de inspiración.</strong></p>",
+        "cta_label": "",
+        "cta_link": "",
+        "main_image": "shopify://shop_images/6.png",
+        "side_image": "shopify://shop_images/3.png",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "padding_top": 56,
+        "padding_bottom": 36
+      }
+    },
+    "collage_xb7MNe": {
+      "type": "collage",
+      "blocks": {
+        "image_YCyLf8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5_991ce1d0-f155-4454-9146-1e3e67a3db30.png"
+          }
+        },
+        "product_6PxgDd": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "ave-guajira-blouse",
+            "second_image": false
+          }
+        },
+        "product_4wBHWe": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "elena-denim-pant",
+            "second_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_YCyLf8",
+        "product_6PxgDd",
+        "product_4wBHWe"
+      ],
+      "disabled": true,
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "magazine_section_mxKzNY",
+    "product-grid",
+    "collage_xb7MNe"
+  ]
+}

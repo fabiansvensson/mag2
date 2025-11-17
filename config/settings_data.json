@@ -125,7 +125,7 @@
     "currency_code_enabled": true,
     "cart_type": "notification",
     "show_vendor": false,
-    "show_cart_note": false,
+    "show_cart_note": true,
     "cart_drawer_collection": "",
     "sections": {
       "main-password-header": {
@@ -164,11 +164,6 @@
         "disabled": false,
         "settings": {}
       },
-      "11254466806377166470": {
-        "type": "shopify://apps/bf-size-charts/blocks/embed-block/47ee4f2e-eb5e-41af-9beb-e2786646bf2a",
-        "disabled": false,
-        "settings": {}
-      },
       "10274264662263595587": {
         "type": "shopify://apps/wishlist-plus/blocks/wishlist-collections-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
         "disabled": false,
@@ -195,6 +190,31 @@
           "swym_variant_selector_create_list_placeholder_text": "Enter wishlist name",
           "swym_variant_selector_create_list_title": "Name Your Wishlist"
         }
+      },
+      "11254466806377166470": {
+        "type": "shopify://apps/bf-size-charts/blocks/embed-block/47ee4f2e-eb5e-41af-9beb-e2786646bf2a",
+        "disabled": true,
+        "settings": {}
+      },
+      "776302416715791028": {
+        "type": "shopify://apps/bucks/blocks/app-embed/4f0a9b06-9da4-4a49-b378-2de9d23a3af3",
+        "disabled": false,
+        "settings": {}
+      },
+      "6146500278089136509": {
+        "type": "shopify://apps/bm-country-blocker-ip-blocker/blocks/boostmark-blocker/bf9db4b9-be4b-45e1-8127-bbcc07d93e7e",
+        "disabled": false,
+        "settings": {}
+      },
+      "18408366429334172745": {
+        "type": "shopify://apps/pop-convert-pop-ups-banners/blocks/app-embed/ed587aec-4936-43ae-a1b3-1c9e0d08f185",
+        "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
@@ -454,6 +474,12 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      "/* Ajuste manual de tamaño para \"Guía de tallas\" */a[href=\"#size-guide-modal\"],button[aria-controls=\"size-guide-modal\"],[data-size-guide] {font-size: 13.2px; /* 👉 ajusta este número hasta que calce con \"Talla\" */ font-weight: 300; /* grosor normal, cámbialo si \"Talla\" es más bold */ font-family: inherit; /* usa la misma tipografía que el resto */ line-height: 1.4; /* puedes tocar esto si se ve más alto/bajo */ color: inherit; background: none; border: none; padding: 0; margin-left: 8px; text-decoration: underline; cursor: pointer;}",
+      " /* Ajuste de márgenes y espacio en vista móvil para el popup de tallas */@media (max-width: 768px) {#size-guide-modal > div {margin: 2rem auto; width: 92%; /* ocupa 92% del ancho en móvil */ max-width: 600px; /* límite para que no se haga muy ancho */ padding: 20px; /* espacio interno */ border-radius: 12px; } #size-guide-modal img {width: 100%; /* que la imagen se adapte */ height: auto; border-radius: 6px; }}",
+      " /* ===== SOLO el submenú Ready-to-wear en móvil ===== */ /* Títulos de sección (Destacado, Por producto) */#link-ready-to-wear .menu-heading,#link-ready-to-wear .menu-title,#link-ready-to-wear li strong {font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-top: 16px; margin-bottom: 6px; display: block;}",
+      " /* Opciones normales (Ver todo, Denim, etc.) */#link-ready-to-wear a,#link-ready-to-wear .menu-item,#link-ready-to-wear .list-menu__item a {font-size: 14px; font-weight: 300; color: #111; text-decoration: none; display: block; margin-bottom: 8px;}",
+      " /* Hover */#link-ready-to-wear a:hover {color: #000; text-decoration: underline;}"
+    ]
   }
 }

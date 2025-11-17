@@ -1,0 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact_form_WCPqPK": {
+      "type": "contact-form",
+      "name": "t:sections.contact-form.presets.name",
+      "settings": {
+        "heading": "Formulario de contacto",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_34BbHw": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  /* —— Estilos “editorial premium” —— */\n  .mg-wrap{max-width:920px;margin:0 auto;padding:56px 24px;color:#222;}\n  .mg-hero{background:#FAF9F6;border-radius:24px;padding:48px 28px;margin-bottom:40px;border:1px solid #F0ECE8;}\n  .mg-title{font-family: \"Playfair Display\", \"Cormorant Garamond\", Georgia, serif; font-size:40px; line-height:1.2; margin:0 0 10px;}\n  .mg-sub{font-family: \"Inter\", \"Helvetica Neue\", Arial, sans-serif; font-size:16px; color:#5A5856; margin:0;}\n  .mg-grid{display:grid;gap:28px;}\n  .mg-card{background:#fff;border:1px solid #EFEAE5;border-radius:20px;padding:28px 24px;}\n  .mg-card h2{font-family: \"Playfair Display\",\"Cormorant Garamond\", Georgia, serif; font-size:26px; margin:0 0 10px;}\n  .mg-card p, .mg-card li{font-family: \"Inter\",\"Helvetica Neue\",Arial,sans-serif; font-size:16px; line-height:1.7; color:#373634;}\n  .mg-list{margin:12px 0 0 18px;}\n  .mg-note{background:#FFF8F6;border:1px solid #F5E4DD;border-radius:16px;padding:18px 16px;margin-top:14px;color:#6A5F5A;}\n  .mg-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}\n  .mg-btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-family:\"Inter\",\"Helvetica Neue\",Arial,sans-serif;border:1px solid #E5D7CF}\n  .mg-btn--primary{background:#E2C4B7;color:#1F1D1C;border-color:#E2C4B7;}\n  .mg-btn--ghost{background:#fff;color:#1F1D1C;}\n  .mg-small{font-size:14px;color:#6B6967}\n  .mg-divider{height:1px;background:linear-gradient(90deg,transparent,#EFEAE5,transparent);margin:36px 0;}\n  .mg-quote{font-family:\"Playfair Display\",\"Cormorant Garamond\",serif;font-size:18px;color:#5A5653;background:#FBFAF8;border-left:4px solid #E2C4B7;padding:16px 18px;border-radius:8px}\n  /* Responsivo */\n  @media (min-width: 860px){\n    .mg-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;}\n  }\n</style>\n\n<div class=\"mg-wrap\">\n\n  <!-- Hero -->\n  <section class=\"mg-hero\">\n    <h1 class=\"mg-title\">Devoluciones y Cambios</h1>\n    <p class=\"mg-sub\">Queremos que te sientas absolutamente segura con tu compra. Si necesitas gestionar un <strong>cambio</strong>, una <strong>devolución</strong> o un <strong>arreglo</strong>, aquí tienes el proceso claro y cuidado.</p>\n    <div class=\"mg-cta\">\n      <a class=\"mg-btn mg-btn--primary\" href=\"#formulario\">Iniciar solicitud</a>\n      <a class=\"mg-btn mg-btn--ghost\" href=\"mailto:info@mariangelicaguerra.com\">Escríbenos</a>\n      <a class=\"mg-btn mg-btn--ghost\" href=\"https://wa.me/573016914180\" target=\"_blank\" rel=\"noopener\">WhatsApp atención</a>\n    </div>\n  </section>\n\n  <div class=\"mg-grid mg-cols\">\n\n    <!-- Devoluciones -->\n    <section class=\"mg-card\">\n      <h2>💎 Devoluciones</h2>\n      <ul class=\"mg-list\">\n        <li>Puedes solicitarla dentro de los <strong>30 días</strong> desde la recepción.</li>\n        <li>La prenda debe estar <strong>nueva, sin usar, con etiquetas y empaque original</strong>.</li>\n        <li>Productos en promoción: solo por <strong>calidad/defecto de fabricación</strong>.</li>\n        <li>Si es aprobada, <strong>nosotros asumimos el costo del transporte</strong> y realizamos el reembolso en <strong>hasta 10 días hábiles</strong> tras recibir la prenda.</li>\n      </ul>\n      <div class=\"mg-note mg-small\">Para iniciar, prepara tu número de pedido y correo de compra.</div>\n    </section>\n\n    <!-- Cambios -->\n    <section class=\"mg-card\">\n      <h2>✨ Cambios</h2>\n      <ul class=\"mg-list\">\n        <li>Disponibles por <strong>30 días</strong> (vestuario) y <strong>5 días</strong> (accesorios).</li>\n        <li>Sujeto a disponibilidad de inventario y revisión de estado.</li>\n        <li>En un cambio, <strong>la clienta asume el envío hacia nuestro taller</strong> y <strong>nosotros el envío de regreso</strong>.</li>\n        <li>Promociones: cambio solo por <strong>motivos de calidad</strong>.</li>\n      </ul>\n      <div class=\"mg-note mg-small\">Recomendamos enviar con guía rastreable y conservar el comprobante.</div>\n    </section>\n\n    <!-- Arreglos -->\n    <section class=\"mg-card\">\n      <h2>🪡 Arreglos</h2>\n      <ul class=\"mg-list\">\n        <li>Si tu prenda requiere un ajuste, <strong>nosotros asumimos el costo del arreglo</strong>.</li>\n        <li>La clienta asume los <strong>envíos de ida y vuelta</strong>.</li>\n      </ul>\n      <p class=\"mg-small\">Nuestro equipo de taller revisará la viabilidad del arreglo y los tiempos estimados.</p>\n    </section>\n\n    <!-- Procedimiento -->\n    <section class=\"mg-card\">\n      <h2>🕊️",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "contact_form_WCPqPK",
+    "main",
+    "custom_liquid_34BbHw"
+  ]
+}

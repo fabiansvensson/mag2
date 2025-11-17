@@ -11,14 +11,15 @@
   "sections": {
     "hero_text_image_ATXRRC": {
       "type": "hero-text-image",
+      "custom_css": [],
       "name": "Hero — text + image",
       "settings": {
         "kicker": "",
         "heading": "Flora by Mariangélica Guerra",
-        "subheading": "<p>An eternal ode to blooming beauty, where femininity flourishes and </p><p>nature whispers in every petal.</p>",
-        "cta_label": "Shop now",
-        "cta_link": "",
-        "image_desktop": "shopify://shop_images/8A03A796-EC07-4001-AC2C-9084D18C369C_1_201_a.jpg",
+        "subheading": "<p>Una oda eterna a la belleza floreciente, donde la feminidad florece y la naturaleza susurra en cada pétalo.</p>",
+        "cta_label": "ver colección",
+        "cta_link": "shopify://collections/flora",
+        "image_desktop": "shopify://shop_images/8A03A796-EC07-4001-AC2C-9084D18C369C_1_201_a_2.jpg",
         "image_mobile": "shopify://shop_images/Dis5eno_sin_titulo.png",
         "image_alt": ""
       }
@@ -91,27 +92,27 @@
         "heading_size": "h0",
         "emphasis_color": "#741c0d",
         "body": "<p>En Mariangélica Guerra, llevamos más de 20 años dedicados a vestir a mujeres con piezas únicas que trascienden el tiempo. Nuestra pasión por la excelencia en el patronaje anatómico, la confección y la atención a cada detalle manual nos define.</p>",
-        "cta_label": "EXPLORE NOW",
+        "cta_label": "explorar",
         "cta_link": "shopify://pages/our-world",
         "main_image": "shopify://shop_images/VQD2023_DSC_2950_1.jpg",
         "side_image": "shopify://shop_images/La_moda_i_el_cuore_-_3_1.jpg",
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 80
       }
     },
     "bestsellers_mag_gCaiX3": {
       "type": "bestsellers-mag",
       "blocks": {
-        "bestseller_product_hGXxLX": {
-          "type": "bestseller_product",
-          "settings": {
-            "product": "ave-guajira-blouse"
-          }
-        },
         "bestseller_product_4wFKDb": {
           "type": "bestseller_product",
           "settings": {
-            "product": "elena-denim-pant"
+            "product": "11616-blusa-chifon-cuello-halter-con-mangas-de-hombros-descubiertos"
+          }
+        },
+        "bestseller_product_hGXxLX": {
+          "type": "bestseller_product",
+          "settings": {
+            "product": "jean-plateado"
           }
         },
         "bestseller_product_Fgfkwf": {
@@ -119,20 +120,28 @@
           "settings": {
             "product": "aquarela-blouse"
           }
+        },
+        "bestseller_product_bTzcbW": {
+          "type": "bestseller_product",
+          "settings": {
+            "product": "tunica-seda-un-solo-hombro"
+          }
         }
       },
       "block_order": [
-        "bestseller_product_hGXxLX",
         "bestseller_product_4wFKDb",
-        "bestseller_product_Fgfkwf"
+        "bestseller_product_hGXxLX",
+        "bestseller_product_Fgfkwf",
+        "bestseller_product_bTzcbW"
       ],
+      "disabled": true,
       "name": "Bestsellers – MAG",
       "settings": {
         "title": "Best",
         "title_cursive": "sellers",
         "show_view_all": true,
-        "view_all_text": "VIEW ALL",
-        "view_all_link": "shopify://collections/all"
+        "view_all_text": "VER TODO",
+        "view_all_link": "shopify://collections/trending-1"
       }
     },
     "about_split_mag_kBe3pc": {
@@ -151,14 +160,59 @@
         "body": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
       }
     },
+    "appears_in_JhWL4g": {
+      "type": "appears-in",
+      "name": "Appears In section",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "image_1_alt": "Describe the first image",
+        "image_2_alt": "Describe the second image",
+        "image_3_alt": "Describe the third image",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "newsletter_mag_aLWerK": {
       "type": "newsletter-mag",
+      "custom_css": [
+        "/* Ocultar newsletter en móviles */@media (max-width: 749px) {.grid {display: none !important; }}"
+      ],
       "name": "Newsletter - MAG",
       "settings": {
-        "bg_image": "shopify://shop_images/Diseno_6sin_titulo.png",
+        "bg_image": "shopify://shop_images/Diseno_sin_titulo.jpg",
         "heading": "Join our world",
-        "description": "Subscribe to our newsletter and be updated on unique collections and new launches.",
-        "button_label": "Sign up"
+        "description": "Suscríbete a nuestro boletín informativo y manténgase al día sobre nuestras colecciones y nuevos lanzamientos.",
+        "button_label": "sign up"
+      }
+    },
+    "featured_collection_X9wDCW": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "trending-1",
+        "products_to_show": 3,
+        "title": "<a href=\"/collections/trending-1\" title=\"trending\">Best<em>sellers</em></a>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 36
       }
     }
   },
@@ -168,6 +222,8 @@
     "magazine_section_6MHi37",
     "bestsellers_mag_gCaiX3",
     "about_split_mag_kBe3pc",
-    "newsletter_mag_aLWerK"
+    "appears_in_JhWL4g",
+    "newsletter_mag_aLWerK",
+    "featured_collection_X9wDCW"
   ]
 }

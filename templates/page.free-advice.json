@@ -12,62 +12,19 @@
     "main": {
       "type": "about-split-mag",
       "settings": {
+        "image": "shopify://shop_images/VQD2023_DSC_2950_1.jpg",
         "image_alt": "",
         "image_position": "left",
         "title_pre": "A",
         "title_highlight": "Legacy",
         "title_post": "of Colombian Craft",
         "emphasis_color": "#741c0d",
-        "subtitle": "Timeless fashion, naturally born",
-        "body": "<p>We are a Colombian author brand rooted in tradition and elegance.</p><p>Every piece is fully handcrafted using only natural fibers.</p><p>Our pattern making is 100% draped — sculpted directly on the mannequin, never flat.</p><p>Each design carries the rhythm of our land and the spirit of our artisans.</p>"
-      }
-    },
-    "rich_text_6c9NHb": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_XYgcPT": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text_fP89Pz": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "button_BX8JyE": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_XYgcPT",
-        "text_fP89Pz",
-        "button_BX8JyE"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "subtitle": "Asesoría gratuita y personalizada",
+        "body": "<p>Te ayudamos a elegir talla, silueta y acabados — ya sea pieza de colección o <strong>bajo pedido</strong>— por nuestro <strong>chat en vivo</strong>, <strong>WhatsApp</strong> o <strong>email</strong>.</p><p><br/><strong>Respuesta rápida.</strong> Te orientamos en tiempo real con recomendaciones precisas.<br/><strong>Acompañamiento completo.</strong> Desde la guía de tallas hasta tiempos de entrega y cuidados.<br/><br/>Móvil: <strong>+57 301 879 8067</strong> ·</p><ul><li>Email: <a><strong>info@mariangelicaguerra.com</strong></a> </li></ul>"
       }
     }
   },
   "order": [
-    "rich_text_6c9NHb",
     "main"
   ]
 }

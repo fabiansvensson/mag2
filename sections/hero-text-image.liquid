@@ -18,19 +18,20 @@
             {% endif %}
 
             {% if section.settings.cta_label and section.settings.cta_link %}
-                <a href="{{ section.settings.cta_link }}" class="button button--primary hero-text-image__cta">
-                    {{ section.settings.cta_label }}
-                </a>
-            {% endif %}
+  <a href="https://www.mariangelicaguerra.com/collections/flora"
+     class="button button--secondary uppercase no-margin"
+     style="text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.4rem; border: none solid #000; padding: 0.8rem 2rem; letter-spacing: 0.05em; font-size: 14px;transition: all 0.2s ease; outline: none; box-shadow: none;">
+    {{ section.settings.cta_label }}
+    <span aria-hidden="true">→</span>
+  </a>
+{% endif %}
+
         </div>
 
-        {% render 'button',
-                label: section.settings.cta_label,
-                href:  section.settings.cta_link,
-                classes: 'mb-14',
-                type: 'link',
-                icon:  'arrow'
-        %}
+       {%- comment -%}
+Duplicated button removed to avoid double CTA rendering.
+{%- endcomment -%}
+
     </div>
 
     <div class="hero-text-image__image">
