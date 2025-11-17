@@ -3,18 +3,18 @@
 <section class="grid mt-14 md:mt-18">
     <!-- Background image -->
     {% if section.settings.bg_image %}
-        <div class="col-start-1 row-start-1 w-full max-w-screen" style="max-width: 100vw">
+        <div class="col-start-1 row-start-1 relative">
             <img src="{{ section.settings.bg_image | image_url: width: 1600 }}"
                  alt="Newsletter background"
                  style="max-width: 100vw;"
-                 class="w-full h-full object-cover">
+                 class="w-full h-full object-cover absolute top-0 left-0 bottom-0 right-0">
         </div>
     {% endif %}
 
     <!-- Overlay for better text contrast -->
     {% comment %} <div class="absolute inset-0 bg-black/0 block" style="display: block"></div> {% endcomment %}
 
-    <div class="col-start-1 row-start-1 relative z-10 mx-auto px-32 flex flex-col w-full h-full justify-start pt-[10vw] text-white">
+    <div class="col-start-1 row-start-1 relative z-10 mx-auto px-14 py-10 sm:pt-[10vw] sm:px-32 flex flex-col w-full h-full justify-start  text-white">
         <!-- Heading -->
         <h2 class="text-[4rem] font-normal mb-6 text-white">
             {{ section.settings.heading }}
