@@ -3,9 +3,10 @@
 <section class="grid mt-14 md:mt-18">
     <!-- Background image -->
     {% if section.settings.bg_image %}
-        <div class="col-start-1 row-start-1">
+        <div class="col-start-1 row-start-1 w-full max-w-screen" style="max-width: 100vw">
             <img src="{{ section.settings.bg_image | image_url: width: 1600 }}"
                  alt="Newsletter background"
+                 style="max-width: 100vw;"
                  class="w-full h-full object-cover">
         </div>
     {% endif %}
