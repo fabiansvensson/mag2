@@ -27,12 +27,6 @@
           "type": "price",
           "settings": {}
         },
-        "custom_liquid_Lj8mLJ": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% if request.page_type == 'product' %}\n  <div id=\"currency-notice\" class=\"currency-notice\" aria-live=\"polite\">\n    El precio se muestra en tu moneda local solo como referencia. El cobro se realiza en pesos colombianos (COP).\n  </div>\n\n  <script>\n    document.addEventListener('DOMContentLoaded', function() {\n      var notice = document.getElementById('currency-notice');\n      if (!notice) return;\n\n      // intenta varias ubicaciones típicas de precio según el tema\n      var targets = [\n        document.querySelector('product-info .price'),\n        document.querySelector('.product__info-container .price'),\n        document.querySelector('.product__info-wrapper .price'),\n        document.querySelector('[data-product-price]'),\n        document.querySelector('.product__price'),\n        document.querySelector('.price')\n      ].filter(Boolean);\n\n      var priceEl = targets.length ? targets[0] : null;\n      if (priceEl && priceEl.parentNode) {\n        // inserta el aviso justo después del precio\n        priceEl.parentNode.insertBefore(notice, priceEl.nextSibling);\n      }\n    });\n  </script>\n\n  <style>\n    .currency-notice{\n      font-size: 1rem; /* ~14px */\n      line-height: 1.4;\n      opacity: 0.8;\n      margin-top: 0.25rem;\n    }\n  </style>\n{% endif %}"
-          }
-        },
         "bf_size_charts_block_iEgWfa": {
           "type": "shopify://apps/bf-size-charts/blocks/block/47ee4f2e-eb5e-41af-9beb-e2786646bf2a",
           "disabled": true,
@@ -124,13 +118,28 @@
           "settings": {
             "custom_liquid": "<script>\n(function () {\n  function setAttrs(v) {\n    if (!v) return;\n    v.muted = true;\n    v.loop = true;\n    v.autoplay = true;\n    v.playsInline = true;\n    v.setAttribute('muted','');\n    v.setAttribute('loop','');\n    v.setAttribute('autoplay','');\n    v.setAttribute('playsinline','');\n    v.setAttribute('webkit-playsinline','');\n    v.removeAttribute('controls');\n  }\n  function tryPlay(v){ if(v) v.play()?.catch(()=>{}); }\n  function tryPause(v){ if(v) v.pause?.(); }\n\n  // Encuentra la galería (Dawn)\n  function getGallery(){\n    return document.querySelector('media-gallery, [id^=\"MediaGallery\"], .product__media');\n  }\n\n  function getAllVideos() {\n    // videos nativos (MP4) dentro de la galería\n    return document.querySelectorAll('media-gallery video, [id^=\"MediaGallery\"] video, .product__media video');\n  }\n\n  function getActiveVideo() {\n    // distintos selectores según versión de Dawn\n    return (\n      document.querySelector('media-gallery .slider__slide[aria-hidden=\"false\"] video') ||\n      document.querySelector('[id^=\"MediaGallery\"] .is-active video') ||\n      document.querySelector('.product__media-item--active video')\n    );\n  }\n\n  function enhanceAll() {\n    var vids = getAllVideos();\n    vids.forEach(setAttrs);\n    playOnlyActive();\n  }\n\n  function playOnlyActive() {\n    var vids = getAllVideos();\n    var active = getActiveVideo();\n    vids.forEach(v => (v === active ? tryPlay(v) : tryPause(v)));\n  }\n\n  function observeSlideChanges(gallery){\n    if (!gallery) return;\n    // 1) Cambios de aria-hidden al pasar de slide\n    var mo = new MutationObserver(function(){\n      playOnlyActive();\n    });\n    mo.observe(gallery, { subtree: true, attributes: true, attributeFilter: ['aria-hidden','class','hidden'] });\n\n    // 2) Clicks en miniaturas\n    document.addEventListener('click', function(e){\n      if (e.target.closest('[data-thumbnail], .thumbnail-list__item, button[aria-controls*=\"MediaGallery\"]')) {\n        setTimeout(playOnlyActive, 120);\n      }\n    }, true);\n\n    // 3) Reintentos típicos móvil/iOS\n    ['touchstart','pointerdown','scroll'].forEach(ev=>{\n      window.addEventListener(ev, ()=> playOnlyActive(), { once:true, passive:true });\n    });\n\n    document.addEventListener('visibilitychange', function(){\n      if (!document.hidden) playOnlyActive();\n    });\n\n    // 4) Reproduce solo cuando el slide está visible en viewport\n    if ('IntersectionObserver' in window) {\n      var io = new IntersectionObserver((entries)=>{\n        entries.forEach((entry)=>{\n          if (entry.isIntersecting) {\n            setAttrs(entry.target);\n            tryPlay(entry.target);\n          } else {\n            tryPause(entry.target);\n          }\n        });\n      }, { threshold: 0.5 });\n      getAllVideos().forEach(v => io.observe(v));\n    }\n  }\n\n  function init(){\n    var gallery = getGallery();\n    if (!gallery) return;\n    enhanceAll();\n    observeSlideChanges(gallery);\n  }\n\n  if (document.readyState === 'loading') {\n    document.addEventListener('DOMContentLoaded', init);\n  } else {\n    init();\n  }\n})();\n</script>"
           }
+        },
+        "bold_discounts_flash_sales_sale_clock_mzgEVD": {
+          "type": "shopify://apps/bold-discounts-flash-sales/blocks/sale-clock/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
+          "settings": {
+            "is_preview_enabled": false,
+            "templates": "template_1",
+            "text_align": "left",
+            "font_size": 16,
+            "font_color": "#000000",
+            "margin_size": 0,
+            "padding_size": 0,
+            "border_color": "#000000",
+            "border_size": 0,
+            "background_color": "transparent",
+            "custom_css": "#shappify_count_down {}"
+          }
         }
       },
       "block_order": [
         "title",
         "caption",
         "price",
-        "custom_liquid_Lj8mLJ",
         "bf_size_charts_block_iEgWfa",
         "variant_picker",
         "buy_buttons",
@@ -138,7 +147,8 @@
         "icon_with_text_HhVmML",
         "wishlist_plus_wishlist_pdp_button_kmdPmn",
         "custom_liquid_xHfVXP",
-        "custom_liquid_kqxmtd"
+        "custom_liquid_kqxmtd",
+        "bold_discounts_flash_sales_sale_clock_mzgEVD"
       ],
       "custom_css": [],
       "settings": {
@@ -231,7 +241,7 @@
         "column-0": {
           "type": "column",
           "settings": {
-            "title": "Envío <em>rápido</em>",
+            "title": "Envío <em>grátis</em> y <em>rápido</em>",
             "text": "<p>Entrega de pedidos metropolitanos en 1-4 dias y envío gratutito en pedidos nacionales.</p>",
             "link_label": "",
             "link": ""

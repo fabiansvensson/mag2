@@ -154,8 +154,23 @@
       </button>
     </div>
     <div class="ml-8 mb-24 sm:m-0 flex flex-col">
-      <small>Made in Colombia.</small>
-      <small>Shipped from Spain.</small>
+      {% assign eu_countries = "ES,PT,FR,DE,IT,NL,BE,LU,IE,AT,FI,SE,DK,NO,CH,PL,CZ,SK,HU,RO,BG,HR,SI,EE,LV,LT,GR,MT,CY,GB" | split: "," %}
+
+{% if eu_countries contains localization.country.iso_code %}
+  <div class="ml-0 mb-6 sm:ml-8 sm:mb-24 flex flex-col">
+    <small>Made in Colombia.</small>
+    <small>Shipped from Spain.</small>
+  </div>
+{% else %}
+  <div class="ml-0 mb-3 sm:ml-8 sm:mb-24 flex flex-col">
+    <small>Made in Colombia.</small>
+    <small>By artisans.</small>
+  </div>
+{% endif %}
+
+
+
+
     </div>
   </slider-component>
   {%- if first_3d_model -%}

@@ -97,7 +97,7 @@
         "main_image": "shopify://shop_images/VQD2023_DSC_2950_1.jpg",
         "side_image": "shopify://shop_images/La_moda_i_el_cuore_-_3_1.jpg",
         "padding_top": 48,
-        "padding_bottom": 80
+        "padding_bottom": 52
       }
     },
     "bestsellers_mag_gCaiX3": {
@@ -173,26 +173,13 @@
         "padding_bottom": 0
       }
     },
-    "newsletter_mag_aLWerK": {
-      "type": "newsletter-mag",
-      "custom_css": [
-        "/* Ocultar newsletter en móviles */@media (max-width: 749px) {.grid {display: none !important; }}"
-      ],
-      "name": "Newsletter - MAG",
-      "settings": {
-        "bg_image": "shopify://shop_images/Diseno_sin_titulo.jpg",
-        "heading": "Join our world",
-        "description": "Suscríbete a nuestro boletín informativo y manténgase al día sobre nuestras colecciones y nuevos lanzamientos.",
-        "button_label": "sign up"
-      }
-    },
     "featured_collection_X9wDCW": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "trending-1",
         "products_to_show": 3,
-        "title": "<a href=\"/collections/trending-1\" title=\"trending\">Best<em>sellers</em></a>",
+        "title": "",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -214,6 +201,59 @@
         "padding_top": 32,
         "padding_bottom": 36
       }
+    },
+    "newsletter_mag_aLWerK": {
+      "type": "newsletter-mag",
+      "disabled": true,
+      "custom_css": [],
+      "name": "Newsletter - MAG",
+      "settings": {
+        "bg_image": "shopify://shop_images/Diseno_sin_titulo_9.jpg",
+        "heading": "Join our world",
+        "description": "Suscríbete a nuestro newsletter y manténgase al día sobre nuestras colecciones y nuevos lanzamientos.",
+        "button_label": ""
+      }
+    },
+    "newsletter_tmnPaX": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_xnLxQB": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_TEUkDN": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<h2>Join our World</h2><h6>Suscríbase para recibir actualizaciones exclusivas vía email y obtenga un descuento del 10% en su próximo pedido.</h6>"
+          }
+        },
+        "email_form_zhzxkW": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_xnLxQB",
+        "paragraph_TEUkDN",
+        "email_form_zhzxkW"
+      ],
+      "custom_css": [
+        ".newsletter.center,.newsletter.center * {text-align: left; align-items: flex-start;}",
+        ".newsletter.center .newsletter__wrapper,.newsletter.center .newsletter__heading,.newsletter.center .newsletter__subheading,.newsletter.center .newsletter-form,.newsletter.center .newsletter-form .field {margin-left: 0; padding-left: 0;}",
+        ".newsletter.center .newsletter__wrapper {margin-left: 22px;}",
+        ".newsletter__subheading {font-size: 14px !important;}",
+        ".newsletter-form__message {max-width: 600px !important;}"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
@@ -223,7 +263,8 @@
     "bestsellers_mag_gCaiX3",
     "about_split_mag_kBe3pc",
     "appears_in_JhWL4g",
+    "featured_collection_X9wDCW",
     "newsletter_mag_aLWerK",
-    "featured_collection_X9wDCW"
+    "newsletter_tmnPaX"
   ]
 }

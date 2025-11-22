@@ -239,8 +239,8 @@
         "column-0": {
           "type": "column",
           "settings": {
-            "title": "Envío <em>rápido</em>",
-            "text": "<p>Entrega de pedidos metropolitanos en 1-4 dias y envío gratutito en pedidos nacionales.</p>",
+            "title": "Envío <em>gratis</em>",
+            "text": "<p>Envío gratutito en pedidos nacionales e internacionales.</p>",
             "link_label": "",
             "link": ""
           }
@@ -299,10 +299,10 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "También te puede gustar",
+        "heading": "",
         "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 3,
+        "columns_desktop": 3,
         "columns_mobile": "1",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
@@ -311,7 +311,7 @@
         "show_vendor": false,
         "show_rating": false,
         "padding_top": 16,
-        "padding_bottom": 28
+        "padding_bottom": 16
       }
     },
     "17584624936bfd2592": {
@@ -334,7 +334,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<!-- MODAL de Guía de tallas -->\n<div id=\"size-guide-modal\" style=\"display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:9999;\">\n  <div style=\"\n    background:#fff; \n    margin:2rem auto; \n    max-width:min(600px, 750vw); \n    max-height:100vh; \n    padding:16px; \n    border-radius:14px; \n    position:relative; \n    overflow:auto;  \n    box-sizing:border-box;\">\n    \n    <button type=\"button\" aria-label=\"Cerrar\"\n      onclick=\"document.getElementById('size-guide-modal').style.display='none'\"\n      style=\"position:sticky; top:0; float:right; font-size:28px; line-height:1; background:transparent; border:0; cursor:pointer;\">×</button>\n\n    <img\n      src=\"https://cdn.shopify.com/s/files/1/0935/7197/3464/files/Talla_Detalle.png?v=1759393655\"\n      alt=\"Guía de tallas\"\n      style=\"\n        display:block; \n        width:100%; \n        height:auto; \n        max-height:82vh; \n        object-fit:contain; \n        border-radius:8px; \n        margin:0 auto;\">\n  </div>\n</div>\n\n<script>\n  // Hook por si el tema no lo hace solo\n  document.addEventListener('click', function(e){\n    if (e.target.matches('[data-size-guide], a[href=\"#size-guide-modal\"], button[aria-controls=\"size-guide-modal\"]')) {\n      e.preventDefault();\n      document.getElementById('size-guide-modal').style.display = 'block';\n    }\n  });\n  // Cerrar al click fuera\n  window.addEventListener('click', function(e){\n    const modal = document.getElementById('size-guide-modal');\n    if (e.target === modal) modal.style.display = 'none';\n  });\n</script>",
+        "custom_liquid": "<!-- MODAL de Guía de tallas -->\n<div id=\"size-guide-modal\" style=\"display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:9999;\">\n  <div style=\"\n    background:#fff; \n    margin:2rem auto; \n    max-width:min(600px, 750vw); \n    max-height:100vh; \n    padding:16px; \n    border-radius:14px; \n    position:relative; \n    overflow:auto;  \n    box-sizing:border-box;\">\n    \n    <button type=\"button\" aria-label=\"Cerrar\"\n      onclick=\"document.getElementById('size-guide-modal').style.display='none'\"\n      style=\"position:sticky; top:0; float:right; font-size:25px; line-height:1; background:transparent; border:0; cursor:pointer;\">×</button>\n\n    <img\n      src=\"https://cdn.shopify.com/s/files/1/0935/7197/3464/files/Talla_Detalle.png?v=1759393655\"\n      alt=\"Guía de tallas\"\n      style=\"\n        display:block; \n        width:100%; \n        height:auto; \n        max-height:82vh; \n        object-fit:contain; \n        border-radius:8px; \n        margin:0 auto;\">\n  </div>\n</div>\n\n<script>\n  // Hook por si el tema no lo hace solo\n  document.addEventListener('click', function(e){\n    if (e.target.matches('[data-size-guide], a[href=\"#size-guide-modal\"], button[aria-controls=\"size-guide-modal\"]')) {\n      e.preventDefault();\n      document.getElementById('size-guide-modal').style.display = 'block';\n    }\n  });\n  // Cerrar al click fuera\n  window.addEventListener('click', function(e){\n    const modal = document.getElementById('size-guide-modal');\n    if (e.target === modal) modal.style.display = 'none';\n  });\n</script>",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52

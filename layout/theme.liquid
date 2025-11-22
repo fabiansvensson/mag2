@@ -408,5 +408,68 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const header = document.querySelector(".header-wrapper");
+  if (!header) return;
+
+  let lastScroll = window.pageYOffset;
+  let hidden = false;
+
+  function isMobile() {
+    return window.innerWidth < 750;
+  }
+
+  window.addEventListener("scroll", function() {
+    if (!isMobile()) {
+      // en desktop nos aseguramos de que esté visible
+      header.style.transform = "";
+      hidden = false;
+      lastScroll = window.pageYOffset;
+      return;
+    }
+
+    const current = window.pageYOffset;
+
+    // Siempre visible cuando estamos arriba del todo
+    if (current <= 10) {
+      header.style.transform = "translateY(0)";
+      hidden = false;
+      lastScroll = current;
+      return;
+    }
+
+    // Scroll hacia abajo (más de 5px de diferencia) → esconder
+    if (current > lastScroll + 5 && !hidden) {
+      header.style.transform = "translateY(-100%)";
+      hidden = true;
+    }
+
+    // Scroll hacia arriba (más de 5px) → mostrar
+    if (current < lastScroll - 5 && hidden) {
+      header.style.transform = "translateY(0)";
+      hidden = false;
+    }
+
+    lastScroll = current;
+  });
+});
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  function hideLocalization() {
+    var els = document.querySelectorAll(
+      ".menu-drawer__localization, .localization-form, .localization-form__select"
+    );
+    els.forEach(function(el) {
+      el.style.display = "none";
+    });
+  }
+
+  hideLocalization();
+
+  // Por si el menú se vuelve a dibujar (Shopify carga secciones dinámicamente)
+  document.addEventListener("shopify:section:load", hideLocalization);
+});
+</script>
   </body>
 </html>

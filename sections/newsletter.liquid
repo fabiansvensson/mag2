@@ -101,18 +101,38 @@
                 {%- endif -%}
               </div>
               {%- if form.posted_successfully? -%}
-                <h3
-                  class="newsletter-form__message newsletter-form__message--success form__message"
-                  id="Newsletter-success--{{ section.id }}"
-                  tabindex="-1"
-                  autofocus
-                >
-                  <span class="svg-wrapper">
-                    {{- 'icon-success.svg' | inline_asset_content -}}
-                  </span>
-                  {{- 'newsletter.success' | t }}
-                </h3>
-              {%- endif -%}
+  <h3
+    class="newsletter-form__message newsletter-form__message--success form__message"
+    id="Newsletter-success--{{ section.id }}"
+    tabindex="-1"
+    autofocus
+    style="
+      max-width:none;
+      word-break:keep-all;
+      white-space:normal;
+      hyphens:none;
+      font-size:12px;
+      font-family:'Inter', sans-serif;
+      font-weight:300;
+      line-height:1.6;
+    "
+  >
+    <span class="svg-wrapper">
+      {{- 'icon-success.svg' | inline_asset_content -}}
+    </span>
+
+    <span style="display:inline-block; font-family:'Inter', sans-serif;">
+      Gracias por suscribirte.
+      Usa el código 
+      <strong style="font-family:'Inter', sans-serif; font-weight:500; font-size:12px; letter-spacing:0.2px;">
+        MariangelicaWorld
+      </strong>
+      al finalizar tu compra para recibir un 10% de descuento.
+    </span>
+  </h3>
+{%- endif -%}
+
+
             {% endform %}
           </div>
       {%- endcase -%}

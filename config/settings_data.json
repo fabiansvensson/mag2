@@ -196,16 +196,6 @@
         "disabled": true,
         "settings": {}
       },
-      "776302416715791028": {
-        "type": "shopify://apps/bucks/blocks/app-embed/4f0a9b06-9da4-4a49-b378-2de9d23a3af3",
-        "disabled": false,
-        "settings": {}
-      },
-      "6146500278089136509": {
-        "type": "shopify://apps/bm-country-blocker-ip-blocker/blocks/boostmark-blocker/bf9db4b9-be4b-45e1-8127-bbcc07d93e7e",
-        "disabled": false,
-        "settings": {}
-      },
       "18408366429334172745": {
         "type": "shopify://apps/pop-convert-pop-ups-banners/blocks/app-embed/ed587aec-4936-43ae-a1b3-1c9e0d08f185",
         "disabled": false,
@@ -215,6 +205,28 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": true,
         "settings": {}
+      },
+      "2076966522491132125": {
+        "type": "shopify://apps/bold-discounts-flash-sales/blocks/sale-icon-collection/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
+        "disabled": true,
+        "settings": {
+          "icon_style": "tag.svg",
+          "icon_height": 24,
+          "icon_width": 24,
+          "icon_position": "top-right",
+          "custom_badge_class_selector": ".card__badge { display: none !important; }",
+          "icon_style_custom": ".shappify-sales-icon-product {}"
+        }
+      },
+      "11095253573082077043": {
+        "type": "shopify://apps/bold-discounts-flash-sales/blocks/dup-and-hide/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
+        "disabled": false,
+        "settings": {
+          "product_element_locator": ".grid__item",
+          "product_search_element_locator": ".grid__item",
+          "predictive_search_element_locator": "#predictive-search-results-products-list",
+          "delay_pred_search": 100
+        }
       }
     },
     "color_schemes": {
@@ -475,11 +487,14 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "/* Ajuste manual de tamaño para \"Guía de tallas\" */a[href=\"#size-guide-modal\"],button[aria-controls=\"size-guide-modal\"],[data-size-guide] {font-size: 13.2px; /* 👉 ajusta este número hasta que calce con \"Talla\" */ font-weight: 300; /* grosor normal, cámbialo si \"Talla\" es más bold */ font-family: inherit; /* usa la misma tipografía que el resto */ line-height: 1.4; /* puedes tocar esto si se ve más alto/bajo */ color: inherit; background: none; border: none; padding: 0; margin-left: 8px; text-decoration: underline; cursor: pointer;}",
-      " /* Ajuste de márgenes y espacio en vista móvil para el popup de tallas */@media (max-width: 768px) {#size-guide-modal > div {margin: 2rem auto; width: 92%; /* ocupa 92% del ancho en móvil */ max-width: 600px; /* límite para que no se haga muy ancho */ padding: 20px; /* espacio interno */ border-radius: 12px; } #size-guide-modal img {width: 100%; /* que la imagen se adapte */ height: auto; border-radius: 6px; }}",
-      " /* ===== SOLO el submenú Ready-to-wear en móvil ===== */ /* Títulos de sección (Destacado, Por producto) */#link-ready-to-wear .menu-heading,#link-ready-to-wear .menu-title,#link-ready-to-wear li strong {font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-top: 16px; margin-bottom: 6px; display: block;}",
-      " /* Opciones normales (Ver todo, Denim, etc.) */#link-ready-to-wear a,#link-ready-to-wear .menu-item,#link-ready-to-wear .list-menu__item a {font-size: 14px; font-weight: 300; color: #111; text-decoration: none; display: block; margin-bottom: 8px;}",
-      " /* Hover */#link-ready-to-wear a:hover {color: #000; text-decoration: underline;}"
+      "a[href=\"#size-guide-modal\"],button[aria-controls=\"size-guide-modal\"],[data-size-guide] {font-size: 13.2px; font-weight: 300; font-family: inherit; line-height: 1.4; color: inherit; background: none; border: none; padding: 0; margin-left: 8px; text-decoration: underline; cursor: pointer;}",
+      "@media (max-width: 768px) {#size-guide-modal > div {margin: 2rem auto; width: 92%; max-width: 600px; padding: 20px; border-radius: 12px; } #size-guide-modal img {width: 100%; height: auto; border-radius: 6px; }}",
+      "#link-ready-to-wear .menu-heading,#link-ready-to-wear .menu-title,#link-ready-to-wear li strong {font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-top: 16px; margin-bottom: 6px; display: block;}",
+      "#link-ready-to-wear a,#link-ready-to-wear .menu-item,#link-ready-to-wear .list-menu__item a {font-size: 14px; font-weight: 300; color: #111; text-decoration: none; display: block; margin-bottom: 8px;}",
+      "#link-ready-to-wear a:hover {color: #000; text-decoration: underline;}",
+      "@media (max-width: 749px) {.header-wrapper {position: relative !important; top: unset !important; transition: 0.25s; }}",
+      "@media (max-width: 749px) {.menu-drawer__menu > li > details > summary.menu-drawer__menu-item {font-size: 15px !important; font-weight: 300 !important; line-height: 1.3 !important; } .menu-drawer__menu > li > a.menu-drawer__menu-item {font-size: 15px !important; font-weight: 300 !important; line-height: 1.3 !important; }}",
+      "@media (max-width: 749px) {.menu-drawer__account {font-size: 14px !important; font-weight: 300 !important; } .menu-drawer__account .svg-wrapper {transform: scale(0.8) !important; }}"
     ]
   }
 }
